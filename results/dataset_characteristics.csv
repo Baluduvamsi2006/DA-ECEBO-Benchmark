@@ -1,0 +1,16 @@
+Dataset,Total_Samples,Feature_Count,Majority_Count,Minority_Count,Imbalance_Ratio,Timestamp_Type,Time_Column,Is_Sorted_By_Class,Class_Transitions,Row_Order_Assessment
+creditcard,284807,29,284315,492,577.88,real (Time in seconds),Time,False,926,SHUFFLED / MIXED
+car-good,1728,6,1659,69,24.04,pseudo (row order),None (Index fallback),False,138,SHUFFLED / MIXED
+ecoli2,336,7,284,52,5.46,pseudo (row order),None (Index fallback),True,1,"SORTED BY CLASS (Majority first, Minority last)"
+glass4,214,9,201,13,15.46,pseudo (row order),None (Index fallback),False,2,HIGHLY CLUSTERED / PARTIALLY ORDERED
+glass6,214,9,185,29,6.38,pseudo (row order),None (Index fallback),True,1,"SORTED BY CLASS (Majority first, Minority last)"
+haberman,306,3,225,81,2.78,"real (Year of operation, 1958-1969)",Year,False,105,SHUFFLED / MIXED
+htru2,17898,8,16259,1639,9.92,pseudo (row order),None (Index fallback),False,2478,SHUFFLED / MIXED
+page-blocks-1-3_vs_4,472,10,444,28,15.86,pseudo (row order),None (Index fallback),True,1,"SORTED BY CLASS (Majority first, Minority last)"
+shuttle-c0-vs-c4,1829,9,1706,123,13.87,pseudo (row order),None (Index fallback),True,1,"SORTED BY CLASS (Majority first, Minority last)"
+vehicle0,846,18,647,199,3.25,pseudo (row order),None (Index fallback),False,284,SHUFFLED / MIXED
+vehicle1,846,18,629,217,2.9,pseudo (row order),None (Index fallback),False,330,SHUFFLED / MIXED
+vehicle2,846,18,628,218,2.88,pseudo (row order),None (Index fallback),False,322,SHUFFLED / MIXED
+vehicle3,846,18,634,212,2.99,pseudo (row order),None (Index fallback),False,292,SHUFFLED / MIXED
+wisconsin,683,9,444,239,1.86,pseudo (row order),None (Index fallback),False,268,SHUFFLED / MIXED
+yeast3,1484,8,1321,163,8.1,pseudo (row order),None (Index fallback),False,236,SHUFFLED / MIXED
