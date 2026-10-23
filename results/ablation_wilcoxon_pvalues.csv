@@ -1,0 +1,6 @@
+Comparison,Mean_Diff,Statistic,p_value,Significant_0.05
+"Full DA[4,0.25] vs ECC Uniform",0.3623931709407763,0.0,0.001953125,YES
+"Full DA[4,0.25] vs ECC + Entropy (EC-EBO)",0.08561763810734982,0.0,0.001953125,YES
+"Full DA[4,0.25] vs ECC + Drift Alloc Only (lambda=0)",0.007737605130562142,20.0,0.4921875,NO
+"Full DA[4,0.25] vs Full DA-ECEBO (K=2, lam=0.0)",0.011057921476055176,13.0,0.30078125,NO
+"Full DA[4,0.25] vs Full with p_drift=0",0.0031385567849511963,27.0,1.0,NO

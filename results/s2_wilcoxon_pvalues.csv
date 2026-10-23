@@ -1,0 +1,4 @@
+Comparison,Mean_Diff,Stat,p_value,Significant
+(a) Real vs (b) Permuted,-0.005379583079417416,22.0,0.625,False
+(a) Real vs (c) No-Time (K=1),0.047203946314931314,0.0,0.001953125,True
+(a) Real vs (d) EC-EBO,0.07455971663129465,0.0,0.001953125,True
