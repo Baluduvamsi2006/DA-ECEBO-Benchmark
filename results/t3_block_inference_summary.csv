@@ -1,0 +1,2 @@
+Total_Blocks,DA_beats_ECEBO_Blocks,Sign_Test_Exact_Binomial_p,Sign_Test_Significant_0.05,Block_Level_Bootstrap_Mean_Diff,Block_Level_Bootstrap_95_CI,Block_Level_CI_excludes_zero
+5,4 / 5,0.375,False,0.05797034415326001,"[0.0127, 0.0994]",True

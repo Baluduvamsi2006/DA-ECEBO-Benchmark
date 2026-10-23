@@ -134,6 +134,53 @@ def table_ablation():
         print(df_p.to_string(index=False))
 
 
+def table_t1():
+    print_separator("T1: Allocation Concentration Diagnostics & Spearman Correlation")
+    f_sum = 'results/t1_concentration_summary.csv'
+    f_corr = 'results/t1_spearman_correlations.csv'
+    if os.path.exists(f_sum):
+        df_sum = pd.read_csv(f_sum)
+        print("Mean over 10 Seeds (CART, CreditCard 75/25):")
+        print(df_sum[['Variant', 'Gini_Quota', 'Effective_N', 'Top10_Share', 'Minority-F1']].to_string(index=False))
+    if os.path.exists(f_corr):
+        df_c = pd.read_csv(f_corr)
+        print("\nSpearman Rank Correlation with Minority-F1 (N=50 pairs across 5 variants x 10 seeds):")
+        print(df_c.to_string(index=False))
+
+
+def table_t2():
+    print_separator("T2: Random-Score Control & Alternative Quota Allocation Schemes")
+    f_sum = 'results/t2_random_controls_summary.csv'
+    f_p = 'results/t2_wilcoxon_tests.csv'
+    if os.path.exists(f_sum):
+        df_sum = pd.read_csv(f_sum)
+        print("Performance across Allocation Schemes (10 seeds, CART):")
+        print(df_sum[['Variant', 'Minority-F1', 'Precision', 'Recall', 'Macro-Gmean', 'AUC']].to_string(index=False))
+    if os.path.exists(f_p):
+        df_p = pd.read_csv(f_p)
+        print("\nPaired Wilcoxon Signed-Rank Tests (vs EC-EBO and vs Real-Time DA-ECEBO):")
+        print(df_p[['Variant', 'F1_Mean', 'Diff_vs_ECEBO', 'p_vs_ECEBO', 'Sig_vs_ECEBO', 'Diff_vs_DA', 'p_vs_DA', 'Sig_vs_DA']].to_string(index=False))
+
+
+def table_t3():
+    print_separator("T3: Correct Statistical Inference for Rolling-Origin Evaluation")
+    f_inf = 'results/t3_block_inference_summary.csv'
+    f_trans = 'results/t3_within_block_trans_bootstrap.csv'
+    f_dyn = 'results/t3_dynamic_cv_rolling_origin.csv'
+    if os.path.exists(f_inf):
+        df_inf = pd.read_csv(f_inf)
+        print("Block-Level Statistical Inference (Sign Test & Block Bootstrap):")
+        print(df_inf.to_string(index=False))
+    if os.path.exists(f_trans):
+        df_t = pd.read_csv(f_trans)
+        print("\nWithin-Block Test Transaction Bootstrap CIs (B=1,000 per block):")
+        print(df_t[['Block', 'DA_F1_Mean', 'ECEBO_F1_Mean', 'Mean_Diff', 'WithinBlock_Trans_95_CI', 'CI_excludes_zero']].to_string(index=False))
+    if os.path.exists(f_dyn):
+        df_d = pd.read_csv(f_dyn)
+        print("\nPer-Block Dynamic Expanding-Window CV Chosen Configs & Test F1:")
+        print(df_d[['Block', 'Selected_K', 'Selected_lambda', 'Train_CV_Score', 'Dynamic_DA_F1', 'Fixed_Headline_DA_F1', 'EC-EBO_F1', 'Baseline_F1', 'Dyn_beats_ECEBO', 'Dyn_beats_Baseline']].to_string(index=False))
+
+
 def main():
     print("=" * 90)
     print("PROGRAMMATIC REGENERATION OF ALL RESEARCH TABLES FROM CSV DATA")
@@ -146,7 +193,11 @@ def main():
     table_s4d_rbf_svm()
     table_s5_haberman()
     table_ablation()
+    table_t1()
+    table_t2()
+    table_t3()
 
 
 if __name__ == '__main__':
     main()
+

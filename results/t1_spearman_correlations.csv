@@ -1,0 +1,4 @@
+Metric,Spearman_rho,p_value
+Gini Coefficient vs Minority-F1,-0.26884530236582455,0.059044529753583444
+Effective N Clusters vs Minority-F1,0.5648244468089058,1.928961822717841e-05
+Top-10 Share vs Minority-F1,-0.37273330432442,0.0076811061134362014
