@@ -28,16 +28,19 @@ All scripts use seeds `42..51` and the Largest Remainder integer allocation rule
 | :--- | :--- | :--- | :--- | :--- |
 | **S1** | `python run_s1_cv_grid_10seeds.py` | 25-cell expanding-window CV grid ($K \in \{1..5\} \times \lambda \in \{0, 0.25, 0.5, 0.75, 1.0\}$) across 10 seeds (250 model tasks) | ~32 min (10 parallel workers) | `results/cv_grid_v3.csv`, `results/cv_grid_raw_10seeds.csv` |
 | **S2 & S3** | `python run_s2_s3_experiments.py` | Permuted-timestamp control (4 variants x 10 seeds) + ECC cluster analysis + 5 non-overlapping rolling-origin blocks (4 methods x 10 seeds) | ~21 min (10 parallel workers) | `results/s2_permuted_control_summary.csv`, `results/s2_wilcoxon_pvalues.csv`, `results/s2_cluster_stats.csv`, `results/s3_rolling_blocks_summary.csv`, `results/s3_pooled_ci.csv` |
-| **S4(c), S4(d), S5** | `python run_s4_s5_experiments.py` | Runtime benchmarks (5 runs, median + IQR), sklearn RBF SVC on stratified subsample (10 seeds), Haberman test bootstrap CI | ~5 min (10 parallel workers) | `results/runtime_benchmark_5runs.csv`, `results/rbf_svm_benchmark_summary.csv`, `results/haberman_bootstrap_ci.csv` |
-| **All Tables** | `python make_all_tables.py` | Programmatic regenerator for every table directly from CSV data (zero hand-copying) | ~1.5 sec | Formatted tables to stdout |
+| **All Tables (S1–T3)** | `DA_ECEBO_Research_Benchmark.ipynb` (Cell 21) | Programmatic regenerator for every research table directly from CSV data (zero hand-copying) | ~1.5 sec | Formatted tables pre-rendered in notebook |
 
 ---
 
 ## Reproducing All Tables Programmatically
 
-To display every research table without manual copying:
+All 10 research benchmark tables (S1–S5, R2, T1–T3) are directly embedded and executable within the primary research notebook:
+- **Notebook**: `DA_ECEBO_Research_Benchmark.ipynb`
+- **Cell**: **Cell 21** (*Programmatic Master Research Tables Generator*)
+
+To display all tables, simply open `DA_ECEBO_Research_Benchmark.ipynb` and execute Cell 21 (or view its pre-rendered outputs). You can also run it headlessly via `jupyter nbconvert`:
 ```bash
-python make_all_tables.py
+jupyter nbconvert --to notebook --execute DA_ECEBO_Research_Benchmark.ipynb
 ```
 
 ---
