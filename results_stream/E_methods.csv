@@ -1,0 +1,12 @@
+Method,Package / Source,Public Code Found,Smoke Test on Ecoli2,Resampled Majority,Resampled Minority,Contains NaN,Notes / Details
+SMOTE,imblearn.over_sampling.SMOTE,YES (Installed),PASSED,284.0,284.0,False,Original (284:52) -> Resampled (284:284)
+BorderlineSMOTE,imblearn.over_sampling.BorderlineSMOTE,YES (Installed),PASSED,284.0,284.0,False,Original (284:52) -> Resampled (284:284)
+ADASYN,imblearn.over_sampling.ADASYN,YES (Installed),PASSED,284.0,290.0,False,Original (284:52) -> Resampled (284:290)
+A-SUWO,smote_variants.A_SUWO,YES (Installed),PASSED,282.0,280.0,False,Original (284:52) -> Resampled (282:280)
+CCR,smote_variants.CCR,YES (Installed),PASSED,284.0,287.0,False,Original (284:52) -> Resampled (284:287)
+G-SMOTE,smote_variants.G_SMOTE,YES (Installed),PASSED,284.0,284.0,False,Original (284:52) -> Resampled (284:284)
+MLOS,https://github.com/ytyancp/MLOS,YES (GitHub),Untested (Standalone script),,,,Python implementation (MLOS.py) available from paper author. Needs custom integration.
+HS-SMOTE,https://github.com/gogossss/HS-SMOTE,YES (GitHub MATLAB),Not applicable (MATLAB only),,,,MATLAB implementation (.m file) only; no native Python package found.
+NCLO-SMOTE,None,NO PUBLIC CODE FOUND,Not applicable,,,,No official or community GitHub repo found matching NCLO-SMOTE.
+DGS,None,NO PUBLIC CODE FOUND,Not applicable,,,,No official or community GitHub repo found for DGS oversampling.
+ENU,None,NO PUBLIC CODE FOUND,Not applicable,,,,No official or community GitHub repo found for ENU oversampling.

@@ -1,0 +1,44 @@
+Dataset,Samples,Features,IR,Table1_Membership
+abalone19,4174,8,129.44,Comparison Set
+abalone9-18,731,8,16.4,Comparison Set
+car-good,1728,6,24.04,Both (Comparison & Parameter)
+ecoli-0-1-3-7_vs_2-6,281,7,39.14,Neither
+ecoli-0_vs_1,220,7,1.86,Comparison Set
+ecoli1,336,7,3.36,Comparison Set
+ecoli2,336,7,5.46,Comparison Set
+ecoli3,336,7,8.6,Parameter Set
+ecoli4,336,7,15.8,Parameter Set
+glass-0-1-6_vs_2,192,9,10.29,Comparison Set
+glass-0-1-6_vs_5,184,9,19.44,Neither
+glass0,214,9,2.06,Comparison Set
+glass2,214,9,11.59,Comparison Set
+glass4,214,9,15.46,Comparison Set
+glass5,214,9,22.78,Neither
+glass6,214,9,6.38,Comparison Set
+haberman,306,3,2.78,Comparison Set
+iris0,150,4,2.0,Neither
+new-thyroid1,215,5,5.14,Neither
+new-thyroid2,215,5,5.14,Comparison Set
+page-blocks-1-3_vs_4,472,10,15.86,Comparison Set
+page-blocks0,5472,10,8.79,Neither
+pima,768,8,1.87,Comparison Set
+segment0,2308,19,6.02,Neither
+shuttle-c0-vs-c4,1829,9,13.87,Comparison Set
+shuttle-c2-vs-c4,129,9,20.5,Neither
+vehicle0,846,18,3.25,Comparison Set
+vehicle1,846,18,2.9,Comparison Set
+vehicle2,846,18,2.88,Comparison Set
+vehicle3,846,18,2.99,Comparison Set
+vowel0,988,13,9.98,Comparison Set
+wisconsin,683,9,1.86,Parameter Set
+yeast-0-5-6-7-9_vs_4,528,8,9.35,Comparison Set
+yeast-1-2-8-9_vs_7,947,8,30.57,Comparison Set
+yeast-1-4-5-8_vs_7,693,8,22.1,Comparison Set
+yeast-1_vs_7,459,7,14.3,Comparison Set
+yeast-2_vs_4,514,8,9.08,Comparison Set
+yeast-2_vs_8,482,8,23.1,Comparison Set
+yeast1,1484,8,2.46,Neither
+yeast3,1484,8,8.1,Comparison Set
+yeast4,1484,8,28.1,Comparison Set
+yeast5,1484,8,32.73,Parameter Set
+yeast6,1484,8,41.4,Comparison Set

@@ -1,0 +1,80 @@
+dataset,n,minority_count,method,seconds,timed_out
+ieee_cis,590540,20663,ALL_METHODS,0.0000,too large
+ieee_cis_45,590540,20663,ALL_METHODS,0.0000,too large
+kddcup99_rare,494021,5285,ALL_METHODS,0.0000,too large
+kddcup99_binary,494021,107201,ALL_METHODS,0.0000,too large
+covertype_binary,581012,9493,ALL_METHODS,0.0000,too large
+poker_binary,829201,17541,ALL_METHODS,0.0000,too large
+airlines_ir20,314074,14955,ALL_METHODS,0.0000,too large
+synth_sea_p5,7835,391,None,0.0483,NO
+synth_sea_p5,7835,391,SMOTE,1.8106,NO
+synth_sea_p5,7835,391,BorderlineSMOTE,1.7797,NO
+synth_sea_p5,7835,391,ADASYN,1.8275,NO
+synth_sea_p5,7835,391,G-SMOTE,2.9068,NO
+synth_sea_p5,7835,391,CCR,2.5827,NO
+synth_sea_p5,7835,391,A-SUWO,8.0043,NO
+synth_sea_p5,7835,391,MLOS,96.9888,NO
+synth_sea_p5,7835,391,ECEBO,3.4432,NO
+synth_sea_p5,7835,391,ECEBO_PSI0,4.7115,NO
+synth_sea_p5,7835,391,DAECEBO2,3.7585,NO
+synth_sea_p5,7835,391,DAECEBO2_PSI0,3.3345,NO
+synth_hyperplane_p5,10350,517,None,0.0445,NO
+synth_hyperplane_p5,10350,517,SMOTE,1.7763,NO
+synth_hyperplane_p5,10350,517,BorderlineSMOTE,1.7426,NO
+synth_hyperplane_p5,10350,517,ADASYN,1.7477,NO
+synth_hyperplane_p5,10350,517,G-SMOTE,2.3939,NO
+synth_hyperplane_p5,10350,517,CCR,2.6413,NO
+synth_hyperplane_p5,10350,517,A-SUWO,6.7284,NO
+synth_hyperplane_p5,10350,517,MLOS,135.5577,NO
+synth_hyperplane_p5,10350,517,ECEBO,3.9587,NO
+synth_hyperplane_p5,10350,517,ECEBO_PSI0,3.7271,NO
+synth_hyperplane_p5,10350,517,DAECEBO2,3.7097,NO
+synth_hyperplane_p5,10350,517,DAECEBO2_PSI0,3.7446,NO
+synth_random_rbf_p5,6837,341,None,0.0413,NO
+synth_random_rbf_p5,6837,341,SMOTE,1.7097,NO
+synth_random_rbf_p5,6837,341,BorderlineSMOTE,1.6842,NO
+synth_random_rbf_p5,6837,341,ADASYN,1.7494,NO
+synth_random_rbf_p5,6837,341,G-SMOTE,2.3492,NO
+synth_random_rbf_p5,6837,341,CCR,2.4944,NO
+synth_random_rbf_p5,6837,341,A-SUWO,5.7584,NO
+synth_random_rbf_p5,6837,341,MLOS,56.3206,NO
+synth_random_rbf_p5,6837,341,ECEBO,2.6205,NO
+synth_random_rbf_p5,6837,341,ECEBO_PSI0,2.6229,NO
+synth_random_rbf_p5,6837,341,DAECEBO2,2.6073,NO
+synth_random_rbf_p5,6837,341,DAECEBO2_PSI0,2.6720,NO
+electricity_ir100,26335,260,None,0.0436,NO
+electricity_ir100,26335,260,SMOTE,1.6860,NO
+electricity_ir100,26335,260,BorderlineSMOTE,1.6680,NO
+electricity_ir100,26335,260,ADASYN,1.6821,NO
+electricity_ir100,26335,260,G-SMOTE,2.3500,NO
+electricity_ir100,26335,260,CCR,2.8938,NO
+electricity_ir100,26335,260,A-SUWO,15.7383,NO
+electricity_ir100,26335,260,MLOS,177.2106,NO
+electricity_ir100,26335,260,ECEBO,2.6263,NO
+electricity_ir100,26335,260,ECEBO_PSI0,2.5776,NO
+electricity_ir100,26335,260,DAECEBO2,2.4956,NO
+electricity_ir100,26335,260,DAECEBO2_PSI0,2.8177,NO
+electricity_ir20,27378,1303,None,0.0431,NO
+electricity_ir20,27378,1303,SMOTE,1.7050,NO
+electricity_ir20,27378,1303,BorderlineSMOTE,1.7096,NO
+electricity_ir20,27378,1303,ADASYN,1.7166,NO
+electricity_ir20,27378,1303,G-SMOTE,2.3158,NO
+electricity_ir20,27378,1303,CCR,3.6638,NO
+electricity_ir20,27378,1303,A-SUWO,28.0974,NO
+electricity_ir20,27378,1303,MLOS,300.0000,YES
+electricity_ir20,27378,1303,ECEBO,5.9930,NO
+electricity_ir20,27378,1303,ECEBO_PSI0,5.9956,NO
+electricity_ir20,27378,1303,DAECEBO2,6.0140,NO
+electricity_ir20,27378,1303,DAECEBO2_PSI0,6.1056,NO
+creditcard,284807,492,None,0.1328,NO
+creditcard,284807,492,SMOTE,3.6659,NO
+creditcard,284807,492,BorderlineSMOTE,3.4418,NO
+creditcard,284807,492,ADASYN,3.5288,NO
+creditcard,284807,492,G-SMOTE,3.8267,NO
+creditcard,284807,492,CCR,9.9796,NO
+creditcard,284807,492,A-SUWO,58.9659,ERROR (ERROR)
+creditcard,284807,492,MLOS,62.6842,ERROR (ERROR)
+creditcard,284807,492,ECEBO,7.9377,NO
+creditcard,284807,492,ECEBO_PSI0,8.6494,NO
+creditcard,284807,492,DAECEBO2,7.3549,NO
+creditcard,284807,492,DAECEBO2_PSI0,7.9912,NO

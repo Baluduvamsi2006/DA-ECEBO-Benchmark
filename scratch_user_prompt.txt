@@ -1,0 +1,58 @@
+<USER_REQUEST>
+Audit result for Phase 1c. Same rules as before: new files only, every number from a saved CSV, all variants reported,
+no interpretation, no guessed facts. Send one short report at the end, with CSV paths.
+
+PART 1: RECONCILIATION (short; do these first, but start Part 2 in parallel)
+R1. Acceptance and duplicates. Your C5 literal DAECEBO2 shows acceptance 0.83-0.99 and dup share 0.18-0.31 on Ecoli2/Haberman,
+    while the earlier audit of literal ECEBO showed ~1-3% acceptance and ~97-99% copies on the same datasets.
+    On Ecoli2 and Haberman, seed 42, run these four: ECEBO literal, DAECEBO (original min-max version), DAECEBO2 literal, DAECEBO2_PSI0.
+    For each print: the exact code lines that define "accepted" and "duplicate", the numerator and denominator,
+    the number of proposals, the number accepted, the number of synthetic samples, and the number that are exact copies of a real minority sample
+    (np.array_equal on the row). Use ONE definition for all four. Save to R1_acceptance.csv.
+R2. Credit card clusters. Run the repo code (da_ecebo_and_ecebo_implementation.py, Time excluded from features) and your Task H pipeline
+    on the same chronological 75/25 split. Report for each: N_train, N_min_train, features used (list them), scaling, m (clusters).
+    Explain in numbers why N_min_train is 398 / 417 / 385 in different runs. Save to R2_cc_clusters.csv.
+R3. Depth-6 tree on creditcard, out-of-sample AUC 0.5057. Re-run it. Report: features used, whether Time/Amount are in, predict_proba
+    unique values, AUC on train and on test. Also report the AUC of an unpruned CART on the same split. Save to R3_dt_auc.csv.
+R4. Timing. Re-time with the clock started INSIDE the worker after imports, around fit_resample only. Save C7_timing_v2.csv with
+    columns dataset, method, sampler_seconds, import_seconds, timed_out.
+R5. List the ten comparison methods of the EC-EBO paper exactly as printed there (page and table), and for each say: run / not run / why.
+    Do not take email addresses or URLs from memory; quote the line from the PDF.
+
+PART 2: PHASE 2 BENCHMARK (budget about 9 h; log one row per finished run)
+Datasets: creditcard (primary, real time column, chronological 75/25), electricity_ir20, electricity_ir100, synth_sea_p5,
+synth_hyperplane_p5, synth_random_rbf_p5 (negative control), plus ecoli2 and yeast3 as row-order datasets (shuffled; mark "row order").
+Label synthetic generators "synthetic" and the electricity sets "imbalance induced by subsampling" in every table.
+Methods (12): None, SMOTE, BorderlineSMOTE, ADASYN, G-SMOTE, CCR, A-SUWO, MLOS (majority capped at 20,000 on all datasets), ECEBO (literal),
+ECEBO_PSI0, DAECEBO2 (literal), DAECEBO2_PSI0. Use delta_base=0 for DAECEBO2 and say so.
+Also include the sanity row DAECEBO2 with K=1, lambda=1, delta=0 (must equal ECEBO).
+DA validation: K in {1,2,4} x lambda in {0,0.25,1} (9 cells), 2 expanding-window folds inside the training part, 5 seeds,
+score 0.5*MinorityF1 + 0.5*Gmean. Select (K, lambda) by validation only, per dataset and per acceptance rule. Never look at test.
+Final: 10 seeds (42-51), test on the future 25% and on five later 10% blocks for the stream datasets.
+Classifiers: CART (primary), KNN, GaussianNB, SVC (cap: max_iter=2000 or 20,000-row subsample on creditcard; say which).
+Metrics (per seed, saved): Macro-F1, Macro G-mean (main), Minority-F1, Precision, Recall, AUC.
+Statistics: per dataset paired Wilcoxon over seeds with Holm correction; W/T/L of each DA method vs each other method; bootstrap 95% CI over test
+rows for creditcard (1,000 resamples). No claims beyond the numbers.
+Save: P2_raw.csv, P2_summary.csv, P2_wtl.csv, P2_validation_grid.csv, P2_blocks.csv.
+
+PART 3: FIGURES (vector PDF, figs_stream/, same look as the earlier ones; titles in English; data from the CSVs only)
+F1. For each dataset: change in Macro-F1 and Macro G-mean vs None, bars = mean, dots = seeds (SMOTE, EC-EBO literal, EC-EBO PSI0, DA literal, DA PSI0).
+F2. Quota concentration: cumulative share of the quota against clusters ranked by quota (EC-EBO, DA real time, DA permuted time, equal quota), creditcard.
+F3. Credit card training minority samples in t-SNE, colored by time window (K=2 and K=4), with cluster outlines. Use only the training part.
+F4. Step audit per dataset: bar chart of acceptance rate and of copy share, literal vs PSI0, EC-EBO vs DA, with the R1 definition.
+F5. Recency of each cluster against its quota, for EC-EBO and for DA-ECEBO, creditcard.
+F6. Validation heatmaps K x lambda per dataset.
+F7. Per-block Macro-F1 and Macro G-mean for the stream datasets (None, SMOTE, EC-EBO, DA).
+Do NOT write any interpretation sentences. Report only what the CSVs contain.
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-11-05T21:30:56+05:30.
+
+The user's current state is as follows:
+Other open documents:
+- e:\ml res\phpKo8OWT.arff (LANGUAGE_UNSPECIFIED)
+- e:\ml res\DA_ECEBO_Research_Benchmark.ipynb (LANGUAGE_UNSPECIFIED)
+- e:\ml res\scripts_stream\task_a_equivalence.py (LANGUAGE_UNSPECIFIED)
+- e:\ml res\make_all_tables.py (LANGUAGE_UNSPECIFIED)
+- e:\ml res\run_s2_s3_experiments.py (LANGUAGE_UNSPECIFIED)
+</ADDITIONAL_METADATA>

@@ -1,0 +1,113 @@
+dataset,method,sampler_seconds,import_seconds,timed_out
+ieee_cis,ALL_METHODS,0.0,0.0,too large
+ieee_cis_45,ALL_METHODS,0.0,0.0,too large
+kddcup99_rare,ALL_METHODS,0.0,0.0,too large
+kddcup99_binary,ALL_METHODS,0.0,0.0,too large
+covertype_binary,ALL_METHODS,0.0,0.0,too large
+poker_binary,ALL_METHODS,0.0,0.0,too large
+airlines_ir20,ALL_METHODS,0.0,0.0,too large
+airlines_ir100,ALL_METHODS,0.0,0.0,too large
+synth_sea_p5,,0.0,0.0,NO
+synth_sea_p5,SMOTE,0.0041,1.9641,NO
+synth_sea_p5,BorderlineSMOTE,0.0066,1.9773,NO
+synth_sea_p5,ADASYN,0.007,1.6576,NO
+synth_sea_p5,G-SMOTE,0.0108,3.1605,NO
+synth_sea_p5,CCR,0.0675,2.1504,NO
+synth_sea_p5,A-SUWO,4.1233,2.0203,NO
+synth_sea_p5,MLOS,52.1161,2.0392,NO
+synth_sea_p5,ECEBO,1.0021,1.6355,NO
+synth_sea_p5,ECEBO_PSI0,1.3395,1.4397,NO
+synth_sea_p5,DAECEBO2,0.9863,1.6806,NO
+synth_sea_p5,DAECEBO2_PSI0,1.0329,1.5035,NO
+synth_hyperplane_p5,,0.0,0.0,NO
+synth_hyperplane_p5,SMOTE,0.0043,1.5203,NO
+synth_hyperplane_p5,BorderlineSMOTE,0.0121,1.4679,NO
+synth_hyperplane_p5,ADASYN,0.0119,1.4957,NO
+synth_hyperplane_p5,G-SMOTE,0.0056,2.1327,NO
+synth_hyperplane_p5,CCR,0.1209,2.1327,NO
+synth_hyperplane_p5,A-SUWO,3.746,2.0454,NO
+synth_hyperplane_p5,MLOS,76.5025,1.7136,NO
+synth_hyperplane_p5,ECEBO,1.3207,1.635,NO
+synth_hyperplane_p5,ECEBO_PSI0,1.337,1.5044,NO
+synth_hyperplane_p5,DAECEBO2,1.2603,1.4932,NO
+synth_hyperplane_p5,DAECEBO2_PSI0,1.452,1.4468,NO
+synth_random_rbf_p5,,0.0,0.0,NO
+synth_random_rbf_p5,SMOTE,0.0032,1.6163,NO
+synth_random_rbf_p5,BorderlineSMOTE,0.0087,1.52,NO
+synth_random_rbf_p5,ADASYN,0.0077,1.5529,NO
+synth_random_rbf_p5,G-SMOTE,0.0047,2.0717,NO
+synth_random_rbf_p5,CCR,0.0654,2.0904,NO
+synth_random_rbf_p5,A-SUWO,2.7466,2.1335,NO
+synth_random_rbf_p5,MLOS,45.5288,1.7833,NO
+synth_random_rbf_p5,ECEBO,1.5196,1.9666,NO
+synth_random_rbf_p5,ECEBO_PSI0,1.0132,1.8387,NO
+synth_random_rbf_p5,DAECEBO2,1.9585,1.8688,NO
+synth_random_rbf_p5,DAECEBO2_PSI0,1.9839,2.5723,NO
+electricity_ir20,,0.0,0.0,NO
+electricity_ir20,SMOTE,0.0119,1.9441,NO
+electricity_ir20,BorderlineSMOTE,0.0634,2.3228,NO
+electricity_ir20,ADASYN,0.0359,1.7394,NO
+electricity_ir20,G-SMOTE,0.0308,2.3731,NO
+electricity_ir20,CCR,1.5187,2.5867,NO
+electricity_ir20,A-SUWO,30.6895,7.3486,NO
+electricity_ir20,MLOS,300.0,0.0,YES (Timeout > 300s)
+electricity_ir20,ECEBO,4.5848,2.2645,NO
+electricity_ir20,ECEBO_PSI0,4.6724,1.8914,NO
+electricity_ir20,DAECEBO2,4.8637,1.9925,NO
+electricity_ir20,DAECEBO2_PSI0,4.7904,1.9097,NO
+electricity_ir100,,0.0,0.0,NO
+electricity_ir100,SMOTE,0.0074,1.8815,NO
+electricity_ir100,BorderlineSMOTE,0.0276,2.0082,NO
+electricity_ir100,ADASYN,0.0266,1.815,NO
+electricity_ir100,G-SMOTE,0.0102,2.9221,NO
+electricity_ir100,CCR,0.4517,2.5454,NO
+electricity_ir100,A-SUWO,10.543,2.4272,NO
+electricity_ir100,MLOS,119.4035,2.0858,NO
+electricity_ir100,ECEBO,0.8905,2.0327,NO
+electricity_ir100,ECEBO_PSI0,0.9193,1.9021,NO
+electricity_ir100,DAECEBO2,0.9752,1.8124,NO
+electricity_ir100,DAECEBO2_PSI0,0.8915,1.7704,NO
+ecoli2,,0.0,0.0,NO
+ecoli2,ECEBO_PSI0,0.0003,1.7541,NO
+ecoli2,DAECEBO2_PSI0,0.0003,1.8093,NO
+yeast3,,0.0,0.0,NO
+yeast3,SMOTE,0.0023,1.9104,NO
+yeast3,BorderlineSMOTE,0.0051,2.0011,NO
+yeast3,ADASYN,0.0052,1.9916,NO
+yeast3,G-SMOTE,0.0034,2.6497,NO
+yeast3,CCR,0.021,2.8464,NO
+yeast3,A-SUWO,1.8415,2.5799,NO
+yeast3,MLOS,3.2431,1.8523,NO
+yeast3,ECEBO,0.2887,2.0772,NO
+yeast3,ECEBO_PSI0,0.2861,1.819,NO
+yeast3,DAECEBO2,0.3031,1.8799,NO
+yeast3,DAECEBO2_PSI0,0.3656,2.0244,NO
+creditcard,,0.0,0.0,NO
+creditcard,SMOTE,1.7067,1.8185,NO
+creditcard,BorderlineSMOTE,1.8542,1.7212,NO
+creditcard,ADASYN,1.8927,1.8889,NO
+creditcard,G-SMOTE,1.7075,2.5332,NO
+creditcard,CCR,8.4333,2.7015,NO
+creditcard,A-SUWO,0.0,0.0,"ERROR: 2026-11-05 22:02:58,148:INFO:A_SUWO: Running sampl"
+creditcard,MLOS,261.5183,2.0258,NO
+creditcard,ECEBO,7.5074,2.2833,NO
+creditcard,ECEBO_PSI0,7.9496,2.092,NO
+creditcard,DAECEBO2,7.9278,2.1406,NO
+creditcard,DAECEBO2_PSI0,7.3052,2.0073,NO
+synth_sea_p5,None,0.0,0.0,NO
+synth_hyperplane_p5,None,0.0,0.0,NO
+synth_random_rbf_p5,None,0.0,0.0,NO
+electricity_ir20,None,0.0,0.0,NO
+electricity_ir100,None,0.0,0.0,NO
+ecoli2,None,0.0,0.0,NO
+ecoli2,SMOTE,0.0023,2.0491,NO
+ecoli2,BorderlineSMOTE,0.0029,2.0735,NO
+ecoli2,ADASYN,0.0029,1.9855,NO
+ecoli2,G-SMOTE,0.0031,2.6774,NO
+ecoli2,CCR,0.0049,2.6399,NO
+ecoli2,A-SUWO,1.647,2.8576,NO
+ecoli2,MLOS,0.2503,2.1304,NO
+ecoli2,ECEBO,0.1025,1.9181,NO
+ecoli2,DAECEBO2,0.1162,1.8963,NO
+yeast3,None,0.0,0.0,NO
+creditcard,None,0.0,0.0,NO

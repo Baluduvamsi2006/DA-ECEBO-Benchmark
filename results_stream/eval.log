@@ -1,0 +1,626 @@
+
+=======================================================
+BENCHMARKING: ecoli2 (row order)
+Train: N=252 (Min=38) | Test: N=84 (Min=14)
+=======================================================
+
+=======================================================
+BENCHMARKING: yeast3 (row order)
+Train: N=1113 (Min=126) | Test: N=371 (Min=37)
+=======================================================
+
+=======================================================
+BENCHMARKING: synth_sea_p5 (synthetic)
+Train: N=5876 (Min=331) | Test: N=1959 (Min=60)
+=======================================================
+
+=======================================================
+BENCHMARKING: synth_hyperplane_p5 (synthetic)
+Train: N=7762 (Min=379) | Test: N=2588 (Min=138)
+=======================================================
+
+=======================================================
+BENCHMARKING: synth_random_rbf_p5 (synthetic)
+Train: N=5127 (Min=264) | Test: N=1710 (Min=77)
+=======================================================
+
+=======================================================
+BENCHMARKING: electricity_ir100 (imbalance induced by subsampling)
+Train: N=19751 (Min=203) | Test: N=6584 (Min=57)
+=======================================================
+
+=======================================================
+BENCHMARKING: electricity_ir20 (imbalance induced by subsampling)
+Train: N=20533 (Min=967) | Test: N=6845 (Min=336)
+=======================================================
+[electricity_ir20 | CART | MLOS | seed 51] G-mean: 0.2697, Min-F1: 0.0653, AUC: 0.3647
+[electricity_ir20 | KNN | MLOS | seed 51] G-mean: 0.0302, Min-F1: 0.0929, AUC: 0.4033
+[electricity_ir20 | GaussianNB | MLOS | seed 51] G-mean: 0.0505, Min-F1: 0.0869, AUC: 0.2266
+[electricity_ir20 | SVC | MLOS | seed 51] G-mean: 0.0000, Min-F1: 0.0936, AUC: 0.4714
+[electricity_ir20 | CART | ECEBO | seed 51] G-mean: 0.5955, Min-F1: 0.1827, AUC: 0.6294
+[electricity_ir20 | KNN | ECEBO | seed 51] G-mean: 0.5423, Min-F1: 0.1560, AUC: 0.6181
+[electricity_ir20 | GaussianNB | ECEBO | seed 51] G-mean: 0.7326, Min-F1: 0.2152, AUC: 0.7878
+[electricity_ir20 | SVC | ECEBO | seed 51] G-mean: 0.5238, Min-F1: 0.1012, AUC: 0.6027
+[electricity_ir20 | CART | ECEBO_PSI0 | seed 51] G-mean: 0.7009, Min-F1: 0.1846, AUC: 0.7009
+[electricity_ir20 | KNN | ECEBO_PSI0 | seed 51] G-mean: 0.5576, Min-F1: 0.1849, AUC: 0.6859
+[electricity_ir20 | GaussianNB | ECEBO_PSI0 | seed 51] G-mean: 0.7283, Min-F1: 0.2100, AUC: 0.7885
+[electricity_ir20 | SVC | ECEBO_PSI0 | seed 51] G-mean: 0.4679, Min-F1: 0.1037, AUC: 0.6172
+[electricity_ir20 | CART | DAECEBO2 | seed 51] G-mean: 0.6099, Min-F1: 0.1878, AUC: 0.6386
+[electricity_ir20 | KNN | DAECEBO2 | seed 51] G-mean: 0.5339, Min-F1: 0.1530, AUC: 0.6140
+[electricity_ir20 | GaussianNB | DAECEBO2 | seed 51] G-mean: 0.7212, Min-F1: 0.1951, AUC: 0.8041
+[electricity_ir20 | SVC | DAECEBO2 | seed 51] G-mean: 0.4439, Min-F1: 0.0898, AUC: 0.6092
+[electricity_ir20 | CART | DAECEBO2_PSI0 | seed 51] G-mean: 0.7009, Min-F1: 0.1846, AUC: 0.7009
+[electricity_ir20 | KNN | DAECEBO2_PSI0 | seed 51] G-mean: 0.5576, Min-F1: 0.1849, AUC: 0.6859
+[electricity_ir20 | GaussianNB | DAECEBO2_PSI0 | seed 51] G-mean: 0.7283, Min-F1: 0.2100, AUC: 0.7885
+[electricity_ir20 | SVC | DAECEBO2_PSI0 | seed 51] G-mean: 0.4679, Min-F1: 0.1037, AUC: 0.6172
+[electricity_ir20 | CART | DAECEBO2_Sanity_K1_lam1 | seed 51] G-mean: 0.5955, Min-F1: 0.1827, AUC: 0.6294
+[electricity_ir20 | KNN | DAECEBO2_Sanity_K1_lam1 | seed 51] G-mean: 0.5423, Min-F1: 0.1560, AUC: 0.6181
+[electricity_ir20 | GaussianNB | DAECEBO2_Sanity_K1_lam1 | seed 51] G-mean: 0.7326, Min-F1: 0.2152, AUC: 0.7878
+[electricity_ir20 | SVC | DAECEBO2_Sanity_K1_lam1 | seed 51] G-mean: 0.5238, Min-F1: 0.1012, AUC: 0.6027
+
+=======================================================
+BENCHMARKING: creditcard (Natural)
+Train: N=213605 (Min=398) | Test: N=71202 (Min=94)
+=======================================================
+[creditcard | CART | None | seed 42] G-mean: 0.8314, Min-F1: 0.6771, AUC: 0.8455
+[creditcard | KNN | None | seed 42] G-mean: 0.7785, Min-F1: 0.6162, AUC: 0.8653
+[creditcard | GaussianNB | None | seed 42] G-mean: 0.8835, Min-F1: 0.0874, AUC: 0.9599
+[creditcard | SVC | None | seed 42] G-mean: 0.5925, Min-F1: 0.5197, AUC: 0.9827
+[creditcard | CART | SMOTE | seed 42] G-mean: 0.8371, Min-F1: 0.4505, AUC: 0.8501
+[creditcard | KNN | SMOTE | seed 42] G-mean: 0.8830, Min-F1: 0.0841, AUC: 0.9065
+[creditcard | GaussianNB | SMOTE | seed 42] G-mean: 0.8937, Min-F1: 0.0790, AUC: 0.9613
+[creditcard | SVC | SMOTE | seed 42] G-mean: 0.2089, Min-F1: 0.0027, AUC: 0.9443
+[creditcard | CART | BorderlineSMOTE | seed 42] G-mean: 0.8118, Min-F1: 0.5561, AUC: 0.8293
+[creditcard | KNN | BorderlineSMOTE | seed 42] G-mean: 0.8599, Min-F1: 0.2115, AUC: 0.8855
+[creditcard | GaussianNB | BorderlineSMOTE | seed 42] G-mean: 0.9048, Min-F1: 0.0784, AUC: 0.9640
+[creditcard | SVC | BorderlineSMOTE | seed 42] G-mean: 0.8718, Min-F1: 0.0130, AUC: 0.9430
+[creditcard | CART | ADASYN | seed 42] G-mean: 0.8050, Min-F1: 0.4656, AUC: 0.8237
+[creditcard | KNN | ADASYN | seed 42] G-mean: 0.8899, Min-F1: 0.0608, AUC: 0.9145
+[creditcard | GaussianNB | ADASYN | seed 42] G-mean: 0.8999, Min-F1: 0.0573, AUC: 0.9655
+[creditcard | SVC | ADASYN | seed 42] G-mean: 0.3898, Min-F1: 0.0028, AUC: 0.7649
+[creditcard | CART | G-SMOTE | seed 42] G-mean: 0.8182, Min-F1: 0.5408, AUC: 0.8346
+[creditcard | KNN | G-SMOTE | seed 42] G-mean: 0.8647, Min-F1: 0.1601, AUC: 0.8947
+[creditcard | GaussianNB | G-SMOTE | seed 42] G-mean: 0.8940, Min-F1: 0.0808, AUC: 0.9619
+[creditcard | SVC | G-SMOTE | seed 42] G-mean: 0.4200, Min-F1: 0.0031, AUC: 0.9222
+[creditcard | CART | CCR | seed 42] G-mean: 0.9049, Min-F1: 0.1399, AUC: 0.9083
+[creditcard | KNN | CCR | seed 42] G-mean: 0.8581, Min-F1: 0.1455, AUC: 0.8831
+[creditcard | GaussianNB | CCR | seed 42] G-mean: 0.8875, Min-F1: 0.0761, AUC: 0.9580
+[creditcard | SVC | CCR | seed 42] G-mean: 0.1286, Min-F1: 0.0026, AUC: 0.9186
+[creditcard | CART | A-SUWO | seed 42] G-mean: 0.8311, Min-F1: 0.5485, AUC: 0.8452
+[creditcard | KNN | A-SUWO | seed 42] G-mean: 0.8115, Min-F1: 0.4610, AUC: 0.8502
+[creditcard | GaussianNB | A-SUWO | seed 42] G-mean: 0.9005, Min-F1: 0.0593, AUC: 0.9614
+[creditcard | SVC | A-SUWO | seed 42] G-mean: 0.3581, Min-F1: 0.0025, AUC: 0.6902
+[creditcard | CART | MLOS | seed 42] G-mean: 0.0342, Min-F1: 0.0021, AUC: 0.3891
+
+=======================================================
+BENCHMARKING: ecoli2 (row order)
+Train: N=252 (Min=38) | Test: N=84 (Min=14)
+=======================================================
+
+=======================================================
+BENCHMARKING: yeast3 (row order)
+Train: N=1113 (Min=126) | Test: N=371 (Min=37)
+=======================================================
+
+=======================================================
+BENCHMARKING: synth_sea_p5 (synthetic)
+Train: N=5876 (Min=331) | Test: N=1959 (Min=60)
+=======================================================
+
+=======================================================
+BENCHMARKING: synth_hyperplane_p5 (synthetic)
+Train: N=7762 (Min=379) | Test: N=2588 (Min=138)
+=======================================================
+
+=======================================================
+BENCHMARKING: synth_random_rbf_p5 (synthetic)
+Train: N=5127 (Min=264) | Test: N=1710 (Min=77)
+=======================================================
+
+=======================================================
+BENCHMARKING: electricity_ir100 (imbalance induced by subsampling)
+Train: N=19751 (Min=203) | Test: N=6584 (Min=57)
+=======================================================
+
+=======================================================
+BENCHMARKING: electricity_ir20 (imbalance induced by subsampling)
+Train: N=20533 (Min=967) | Test: N=6845 (Min=336)
+=======================================================
+
+=======================================================
+BENCHMARKING: creditcard (Natural)
+Train: N=213605 (Min=398) | Test: N=71202 (Min=94)
+=======================================================
+[creditcard | KNN | MLOS | seed 42] G-mean: 0.0168, Min-F1: 0.0018, AUC: 0.2107
+[creditcard | GaussianNB | MLOS | seed 42] G-mean: 0.0373, Min-F1: 0.0026, AUC: 0.0440
+[creditcard | SVC | MLOS | seed 42] G-mean: 0.0000, Min-F1: 0.0026, AUC: 0.3560
+[creditcard | CART | ECEBO | seed 42] G-mean: 0.8119, Min-F1: 0.6327, AUC: 0.8295
+[creditcard | KNN | ECEBO | seed 42] G-mean: 0.8700, Min-F1: 0.1433, AUC: 0.8895
+[creditcard | GaussianNB | ECEBO | seed 42] G-mean: 0.9097, Min-F1: 0.0541, AUC: 0.9671
+[creditcard | SVC | ECEBO | seed 42] G-mean: 0.4444, Min-F1: 0.0030, AUC: 0.7946
+[creditcard | CART | ECEBO_PSI0 | seed 42] G-mean: 0.7837, Min-F1: 0.2447, AUC: 0.8062
+[creditcard | KNN | ECEBO_PSI0 | seed 42] G-mean: 0.8899, Min-F1: 0.0607, AUC: 0.8986
+[creditcard | GaussianNB | ECEBO_PSI0 | seed 42] G-mean: 0.9095, Min-F1: 0.0535, AUC: 0.9666
+[creditcard | SVC | ECEBO_PSI0 | seed 42] G-mean: 0.8727, Min-F1: 0.0157, AUC: 0.9192
+[creditcard | CART | DAECEBO2 | seed 42] G-mean: 0.7921, Min-F1: 0.6821, AUC: 0.8137
+[creditcard | KNN | DAECEBO2 | seed 42] G-mean: 0.8759, Min-F1: 0.1426, AUC: 0.8949
+[creditcard | GaussianNB | DAECEBO2 | seed 42] G-mean: 0.9019, Min-F1: 0.0641, AUC: 0.9592
+[creditcard | SVC | DAECEBO2 | seed 42] G-mean: 0.2880, Min-F1: 0.0027, AUC: 0.8442
+[creditcard | CART | DAECEBO2_PSI0 | seed 42] G-mean: 0.8732, Min-F1: 0.2927, AUC: 0.8807
+[creditcard | KNN | DAECEBO2_PSI0 | seed 42] G-mean: 0.8918, Min-F1: 0.0498, AUC: 0.9071
+[creditcard | GaussianNB | DAECEBO2_PSI0 | seed 42] G-mean: 0.9015, Min-F1: 0.0628, AUC: 0.9577
+[creditcard | SVC | DAECEBO2_PSI0 | seed 42] G-mean: 0.1271, Min-F1: 0.0026, AUC: 0.9091
+[creditcard | CART | DAECEBO2_Sanity_K1_lam1 | seed 42] G-mean: 0.8119, Min-F1: 0.6327, AUC: 0.8295
+[creditcard | KNN | DAECEBO2_Sanity_K1_lam1 | seed 42] G-mean: 0.8700, Min-F1: 0.1433, AUC: 0.8895
+[creditcard | GaussianNB | DAECEBO2_Sanity_K1_lam1 | seed 42] G-mean: 0.9097, Min-F1: 0.0541, AUC: 0.9671
+[creditcard | SVC | DAECEBO2_Sanity_K1_lam1 | seed 42] G-mean: 0.4444, Min-F1: 0.0030, AUC: 0.7946
+[creditcard | CART | None | seed 43] G-mean: 0.8119, Min-F1: 0.6425, AUC: 0.8295
+[creditcard | KNN | None | seed 43] G-mean: 0.7853, Min-F1: 0.6203, AUC: 0.8602
+[creditcard | GaussianNB | None | seed 43] G-mean: 0.8835, Min-F1: 0.0874, AUC: 0.9599
+[creditcard | SVC | None | seed 43] G-mean: 0.2526, Min-F1: 0.1200, AUC: 0.9820
+[creditcard | CART | SMOTE | seed 43] G-mean: 0.8499, Min-F1: 0.5075, AUC: 0.8610
+[creditcard | KNN | SMOTE | seed 43] G-mean: 0.8890, Min-F1: 0.0860, AUC: 0.9124
+[creditcard | GaussianNB | SMOTE | seed 43] G-mean: 0.8936, Min-F1: 0.0787, AUC: 0.9612
+[creditcard | SVC | SMOTE | seed 43] G-mean: 0.5429, Min-F1: 0.0037, AUC: 0.9360
+[creditcard | CART | BorderlineSMOTE | seed 43] G-mean: 0.8247, Min-F1: 0.5541, AUC: 0.8399
+[creditcard | KNN | BorderlineSMOTE | seed 43] G-mean: 0.8655, Min-F1: 0.1909, AUC: 0.8851
+[creditcard | GaussianNB | BorderlineSMOTE | seed 43] G-mean: 0.9048, Min-F1: 0.0785, AUC: 0.9640
+[creditcard | SVC | BorderlineSMOTE | seed 43] G-mean: 0.8231, Min-F1: 0.0089, AUC: 0.9467
+[creditcard | CART | ADASYN | seed 43] G-mean: 0.7714, Min-F1: 0.4891, AUC: 0.7973
+[creditcard | KNN | ADASYN | seed 43] G-mean: 0.8839, Min-F1: 0.0593, AUC: 0.9089
+[creditcard | GaussianNB | ADASYN | seed 43] G-mean: 0.8999, Min-F1: 0.0573, AUC: 0.9654
+[creditcard | SVC | ADASYN | seed 43] G-mean: 0.2688, Min-F1: 0.0027, AUC: 0.8539
+[creditcard | CART | G-SMOTE | seed 43] G-mean: 0.8116, Min-F1: 0.5061, AUC: 0.8292
+[creditcard | KNN | G-SMOTE | seed 43] G-mean: 0.8763, Min-F1: 0.1508, AUC: 0.8946
+[creditcard | GaussianNB | G-SMOTE | seed 43] G-mean: 0.8939, Min-F1: 0.0807, AUC: 0.9618
+[creditcard | SVC | G-SMOTE | seed 43] G-mean: 0.4125, Min-F1: 0.0029, AUC: 0.8546
+[creditcard | CART | CCR | seed 43] G-mean: 0.8931, Min-F1: 0.1346, AUC: 0.8975
+[creditcard | KNN | CCR | seed 43] G-mean: 0.8581, Min-F1: 0.1463, AUC: 0.8884
+[creditcard | GaussianNB | CCR | seed 43] G-mean: 0.8875, Min-F1: 0.0761, AUC: 0.9580
+[creditcard | SVC | CCR | seed 43] G-mean: 0.2154, Min-F1: 0.0027, AUC: 0.9054
+[creditcard | CART | A-SUWO | seed 43] G-mean: 0.8313, Min-F1: 0.6633, AUC: 0.8455
+[creditcard | KNN | A-SUWO | seed 43] G-mean: 0.8181, Min-F1: 0.4809, AUC: 0.8398
+[creditcard | GaussianNB | A-SUWO | seed 43] G-mean: 0.9141, Min-F1: 0.0693, AUC: 0.9575
+[creditcard | SVC | A-SUWO | seed 43] G-mean: 0.3644, Min-F1: 0.0026, AUC: 0.6854
+[creditcard | CART | MLOS | seed 43] G-mean: 0.0360, Min-F1: 0.0020, AUC: 0.3732
+[creditcard | KNN | MLOS | seed 43] G-mean: 0.0096, Min-F1: 0.0019, AUC: 0.2164
+[creditcard | GaussianNB | MLOS | seed 43] G-mean: 0.0367, Min-F1: 0.0026, AUC: 0.0463
+[creditcard | SVC | MLOS | seed 43] G-mean: 0.0000, Min-F1: 0.0026, AUC: 0.4004
+[creditcard | CART | ECEBO | seed 43] G-mean: 0.7987, Min-F1: 0.6383, AUC: 0.8189
+[creditcard | KNN | ECEBO | seed 43] G-mean: 0.8646, Min-F1: 0.1596, AUC: 0.8894
+[creditcard | GaussianNB | ECEBO | seed 43] G-mean: 0.9088, Min-F1: 0.0517, AUC: 0.9668
+[creditcard | SVC | ECEBO | seed 43] G-mean: 0.4329, Min-F1: 0.0029, AUC: 0.7408
+[creditcard | CART | ECEBO_PSI0 | seed 43] G-mean: 0.8297, Min-F1: 0.2754, AUC: 0.8435
+[creditcard | KNN | ECEBO_PSI0 | seed 43] G-mean: 0.8842, Min-F1: 0.0605, AUC: 0.9073
+[creditcard | GaussianNB | ECEBO_PSI0 | seed 43] G-mean: 0.9086, Min-F1: 0.0513, AUC: 0.9665
+[creditcard | SVC | ECEBO_PSI0 | seed 43] G-mean: 0.1988, Min-F1: 0.0025, AUC: 0.8955
+[creditcard | CART | DAECEBO2 | seed 43] G-mean: 0.7988, Min-F1: 0.6667, AUC: 0.8190
+[creditcard | KNN | DAECEBO2 | seed 43] G-mean: 0.8706, Min-F1: 0.1575, AUC: 0.9053
+[creditcard | GaussianNB | DAECEBO2 | seed 43] G-mean: 0.9018, Min-F1: 0.0637, AUC: 0.9591
+[creditcard | SVC | DAECEBO2 | seed 43] G-mean: 0.2546, Min-F1: 0.0027, AUC: 0.8274
+[creditcard | CART | DAECEBO2_PSI0 | seed 43] G-mean: 0.8792, Min-F1: 0.2903, AUC: 0.8859
+[creditcard | KNN | DAECEBO2_PSI0 | seed 43] G-mean: 0.8854, Min-F1: 0.0477, AUC: 0.9110
+[creditcard | GaussianNB | DAECEBO2_PSI0 | seed 43] G-mean: 0.9015, Min-F1: 0.0628, AUC: 0.9577
+[creditcard | SVC | DAECEBO2_PSI0 | seed 43] G-mean: 0.1580, Min-F1: 0.0026, AUC: 0.9239
+[creditcard | CART | DAECEBO2_Sanity_K1_lam1 | seed 43] G-mean: 0.7987, Min-F1: 0.6383, AUC: 0.8189
+[creditcard | KNN | DAECEBO2_Sanity_K1_lam1 | seed 43] G-mean: 0.8646, Min-F1: 0.1596, AUC: 0.8894
+[creditcard | GaussianNB | DAECEBO2_Sanity_K1_lam1 | seed 43] G-mean: 0.9088, Min-F1: 0.0517, AUC: 0.9668
+[creditcard | SVC | DAECEBO2_Sanity_K1_lam1 | seed 43] G-mean: 0.4329, Min-F1: 0.0029, AUC: 0.7408
+[creditcard | CART | None | seed 44] G-mean: 0.8249, Min-F1: 0.6337, AUC: 0.8401
+[creditcard | KNN | None | seed 44] G-mean: 0.7785, Min-F1: 0.6264, AUC: 0.8706
+[creditcard | GaussianNB | None | seed 44] G-mean: 0.8835, Min-F1: 0.0874, AUC: 0.9599
+[creditcard | SVC | None | seed 44] G-mean: 0.5925, Min-F1: 0.5197, AUC: 0.9774
+[creditcard | CART | SMOTE | seed 44] G-mean: 0.8308, Min-F1: 0.4377, AUC: 0.8448
+[creditcard | KNN | SMOTE | seed 44] G-mean: 0.8952, Min-F1: 0.0902, AUC: 0.9174
+[creditcard | GaussianNB | SMOTE | seed 44] G-mean: 0.8936, Min-F1: 0.0787, AUC: 0.9613
+[creditcard | SVC | SMOTE | seed 44] G-mean: 0.8884, Min-F1: 0.0163, AUC: 0.9727
+[creditcard | CART | BorderlineSMOTE | seed 44] G-mean: 0.8247, Min-F1: 0.5565, AUC: 0.8399
+[creditcard | KNN | BorderlineSMOTE | seed 44] G-mean: 0.8722, Min-F1: 0.2233, AUC: 0.8909
+[creditcard | GaussianNB | BorderlineSMOTE | seed 44] G-mean: 0.9048, Min-F1: 0.0783, AUC: 0.9640
+[creditcard | SVC | BorderlineSMOTE | seed 44] G-mean: 0.2629, Min-F1: 0.0027, AUC: 0.9309
+[creditcard | CART | ADASYN | seed 44] G-mean: 0.8182, Min-F1: 0.5207, AUC: 0.8345
+[creditcard | KNN | ADASYN | seed 44] G-mean: 0.8960, Min-F1: 0.0629, AUC: 0.9197
+[creditcard | GaussianNB | ADASYN | seed 44] G-mean: 0.8999, Min-F1: 0.0573, AUC: 0.9655
+[creditcard | SVC | ADASYN | seed 44] G-mean: 0.3841, Min-F1: 0.0027, AUC: 0.7604
+[creditcard | CART | G-SMOTE | seed 44] G-mean: 0.8312, Min-F1: 0.5702, AUC: 0.8453
+[creditcard | KNN | G-SMOTE | seed 44] G-mean: 0.8762, Min-F1: 0.1490, AUC: 0.8897
+[creditcard | GaussianNB | G-SMOTE | seed 44] G-mean: 0.8940, Min-F1: 0.0808, AUC: 0.9619
+[creditcard | SVC | G-SMOTE | seed 44] G-mean: 0.3203, Min-F1: 0.0029, AUC: 0.9420
+[creditcard | CART | CCR | seed 44] G-mean: 0.9047, Min-F1: 0.1367, AUC: 0.9081
+[creditcard | KNN | CCR | seed 44] G-mean: 0.8640, Min-F1: 0.1431, AUC: 0.8885
+[creditcard | GaussianNB | CCR | seed 44] G-mean: 0.8875, Min-F1: 0.0761, AUC: 0.9580
+[creditcard | SVC | CCR | seed 44] G-mean: 0.3697, Min-F1: 0.0029, AUC: 0.8815
+[creditcard | CART | A-SUWO | seed 44] G-mean: 0.8809, Min-F1: 0.6404, AUC: 0.8879
+[creditcard | KNN | A-SUWO | seed 44] G-mean: 0.8117, Min-F1: 0.5277, AUC: 0.8505
+[creditcard | GaussianNB | A-SUWO | seed 44] G-mean: 0.9011, Min-F1: 0.0613, AUC: 0.9662
+[creditcard | SVC | A-SUWO | seed 44] G-mean: 0.3607, Min-F1: 0.0026, AUC: 0.6902
+[creditcard | CART | MLOS | seed 44] G-mean: 0.0346, Min-F1: 0.0020, AUC: 0.3838
+[creditcard | KNN | MLOS | seed 44] G-mean: 0.0135, Min-F1: 0.0016, AUC: 0.2056
+[creditcard | GaussianNB | MLOS | seed 44] G-mean: 0.0369, Min-F1: 0.0026, AUC: 0.0452
+[creditcard | SVC | MLOS | seed 44] G-mean: 0.0000, Min-F1: 0.0026, AUC: 0.5781
+[creditcard | CART | ECEBO | seed 44] G-mean: 0.8249, Min-F1: 0.6432, AUC: 0.8401
+[creditcard | KNN | ECEBO | seed 44] G-mean: 0.8766, Min-F1: 0.1594, AUC: 0.8947
+[creditcard | GaussianNB | ECEBO | seed 44] G-mean: 0.9109, Min-F1: 0.0575, AUC: 0.9665
+[creditcard | SVC | ECEBO | seed 44] G-mean: 0.4317, Min-F1: 0.0029, AUC: 0.7882
+[creditcard | CART | ECEBO_PSI0 | seed 44] G-mean: 0.8170, Min-F1: 0.2806, AUC: 0.8331
+[creditcard | KNN | ECEBO_PSI0 | seed 44] G-mean: 0.8850, Min-F1: 0.0637, AUC: 0.9126
+[creditcard | GaussianNB | ECEBO_PSI0 | seed 44] G-mean: 0.9106, Min-F1: 0.0568, AUC: 0.9661
+[creditcard | SVC | ECEBO_PSI0 | seed 44] G-mean: 0.4201, Min-F1: 0.0028, AUC: 0.7593
+[creditcard | CART | DAECEBO2 | seed 44] G-mean: 0.8054, Min-F1: 0.6932, AUC: 0.8243
+[creditcard | KNN | DAECEBO2 | seed 44] G-mean: 0.8764, Min-F1: 0.1547, AUC: 0.9000
+[creditcard | GaussianNB | DAECEBO2 | seed 44] G-mean: 0.9019, Min-F1: 0.0644, AUC: 0.9592
+[creditcard | SVC | DAECEBO2 | seed 44] G-mean: 0.3911, Min-F1: 0.0028, AUC: 0.7919
+[creditcard | CART | DAECEBO2_PSI0 | seed 44] G-mean: 0.8550, Min-F1: 0.3020, AUC: 0.8650
+[creditcard | KNN | DAECEBO2_PSI0 | seed 44] G-mean: 0.8916, Min-F1: 0.0494, AUC: 0.9220
+[creditcard | GaussianNB | DAECEBO2_PSI0 | seed 44] G-mean: 0.9015, Min-F1: 0.0628, AUC: 0.9577
+[creditcard | SVC | DAECEBO2_PSI0 | seed 44] G-mean: 0.8818, Min-F1: 0.0336, AUC: 0.9374
+[creditcard | CART | DAECEBO2_Sanity_K1_lam1 | seed 44] G-mean: 0.8249, Min-F1: 0.6432, AUC: 0.8401
+[creditcard | KNN | DAECEBO2_Sanity_K1_lam1 | seed 44] G-mean: 0.8766, Min-F1: 0.1594, AUC: 0.8947
+[creditcard | GaussianNB | DAECEBO2_Sanity_K1_lam1 | seed 44] G-mean: 0.9109, Min-F1: 0.0575, AUC: 0.9665
+[creditcard | SVC | DAECEBO2_Sanity_K1_lam1 | seed 44] G-mean: 0.4317, Min-F1: 0.0029, AUC: 0.7882
+[creditcard | CART | None | seed 45] G-mean: 0.8249, Min-F1: 0.6702, AUC: 0.8402
+[creditcard | KNN | None | seed 45] G-mean: 0.7785, Min-F1: 0.6129, AUC: 0.8654
+[creditcard | GaussianNB | None | seed 45] G-mean: 0.8835, Min-F1: 0.0874, AUC: 0.9599
+[creditcard | SVC | None | seed 45] G-mean: 0.5925, Min-F1: 0.5197, AUC: 0.9811
+[creditcard | CART | SMOTE | seed 45] G-mean: 0.8372, Min-F1: 0.4698, AUC: 0.8502
+[creditcard | KNN | SMOTE | seed 45] G-mean: 0.8838, Min-F1: 0.0906, AUC: 0.9171
+[creditcard | GaussianNB | SMOTE | seed 45] G-mean: 0.8937, Min-F1: 0.0790, AUC: 0.9613
+[creditcard | SVC | SMOTE | seed 45] G-mean: 0.5499, Min-F1: 0.0037, AUC: 0.9413
+[creditcard | CART | BorderlineSMOTE | seed 45] G-mean: 0.8312, Min-F1: 0.5882, AUC: 0.8453
+[creditcard | KNN | BorderlineSMOTE | seed 45] G-mean: 0.8719, Min-F1: 0.2075, AUC: 0.8854
+[creditcard | GaussianNB | BorderlineSMOTE | seed 45] G-mean: 0.9048, Min-F1: 0.0785, AUC: 0.9640
+[creditcard | SVC | BorderlineSMOTE | seed 45] G-mean: 0.8807, Min-F1: 0.0223, AUC: 0.9409
+[creditcard | CART | ADASYN | seed 45] G-mean: 0.8181, Min-F1: 0.4865, AUC: 0.8344
+[creditcard | KNN | ADASYN | seed 45] G-mean: 0.8902, Min-F1: 0.0621, AUC: 0.9200
+[creditcard | GaussianNB | ADASYN | seed 45] G-mean: 0.8999, Min-F1: 0.0573, AUC: 0.9655
+[creditcard | SVC | ADASYN | seed 45] G-mean: 0.3839, Min-F1: 0.0028, AUC: 0.7839
+[creditcard | CART | G-SMOTE | seed 45] G-mean: 0.8312, Min-F1: 0.5830, AUC: 0.8453
+[creditcard | KNN | G-SMOTE | seed 45] G-mean: 0.8643, Min-F1: 0.1501, AUC: 0.8949
+[creditcard | GaussianNB | G-SMOTE | seed 45] G-mean: 0.8940, Min-F1: 0.0808, AUC: 0.9618
+[creditcard | SVC | G-SMOTE | seed 45] G-mean: 0.6191, Min-F1: 0.0042, AUC: 0.9296
+[creditcard | CART | CCR | seed 45] G-mean: 0.8814, Min-F1: 0.1348, AUC: 0.8871
+[creditcard | KNN | CCR | seed 45] G-mean: 0.8583, Min-F1: 0.1501, AUC: 0.8886
+[creditcard | GaussianNB | CCR | seed 45] G-mean: 0.8876, Min-F1: 0.0762, AUC: 0.9580
+[creditcard | SVC | CCR | seed 45] G-mean: 0.1604, Min-F1: 0.0026, AUC: 0.9171
+[creditcard | CART | A-SUWO | seed 45] G-mean: 0.8437, Min-F1: 0.5276, AUC: 0.8557
+[creditcard | KNN | A-SUWO | seed 45] G-mean: 0.8177, Min-F1: 0.3962, AUC: 0.8607
+[creditcard | GaussianNB | A-SUWO | seed 45] G-mean: 0.9086, Min-F1: 0.0513, AUC: 0.9636
+[creditcard | SVC | A-SUWO | seed 45] G-mean: 0.3812, Min-F1: 0.0027, AUC: 0.6915
+[creditcard | CART | MLOS | seed 45] G-mean: 0.0364, Min-F1: 0.0020, AUC: 0.3838
+[creditcard | KNN | MLOS | seed 45] G-mean: 0.0063, Min-F1: 0.0019, AUC: 0.2158
+[creditcard | GaussianNB | MLOS | seed 45] G-mean: 0.0397, Min-F1: 0.0026, AUC: 0.0403
+[creditcard | SVC | MLOS | seed 45] G-mean: 0.0000, Min-F1: 0.0026, AUC: 0.6309
+[creditcard | CART | ECEBO | seed 45] G-mean: 0.7717, Min-F1: 0.6120, AUC: 0.7976
+[creditcard | KNN | ECEBO | seed 45] G-mean: 0.8646, Min-F1: 0.1590, AUC: 0.8842
+[creditcard | GaussianNB | ECEBO | seed 45] G-mean: 0.9091, Min-F1: 0.0525, AUC: 0.9670
+[creditcard | SVC | ECEBO | seed 45] G-mean: 0.4167, Min-F1: 0.0028, AUC: 0.7631
+[creditcard | CART | ECEBO_PSI0 | seed 45] G-mean: 0.8364, Min-F1: 0.3128, AUC: 0.8492
+[creditcard | KNN | ECEBO_PSI0 | seed 45] G-mean: 0.8788, Min-F1: 0.0614, AUC: 0.9029
+[creditcard | GaussianNB | ECEBO_PSI0 | seed 45] G-mean: 0.9090, Min-F1: 0.0522, AUC: 0.9666
+[creditcard | SVC | ECEBO_PSI0 | seed 45] G-mean: 0.7315, Min-F1: 0.0057, AUC: 0.9098
+[creditcard | CART | DAECEBO2 | seed 45] G-mean: 0.8250, Min-F1: 0.7191, AUC: 0.8403
+[creditcard | KNN | DAECEBO2 | seed 45] G-mean: 0.8705, Min-F1: 0.1562, AUC: 0.8948
+[creditcard | GaussianNB | DAECEBO2 | seed 45] G-mean: 0.9018, Min-F1: 0.0640, AUC: 0.9593
+[creditcard | SVC | DAECEBO2 | seed 45] G-mean: 0.3916, Min-F1: 0.0029, AUC: 0.8026
+[creditcard | CART | DAECEBO2_PSI0 | seed 45] G-mean: 0.8794, Min-F1: 0.3153, AUC: 0.8862
+[creditcard | KNN | DAECEBO2_PSI0 | seed 45] G-mean: 0.8864, Min-F1: 0.0500, AUC: 0.9158
+[creditcard | GaussianNB | DAECEBO2_PSI0 | seed 45] G-mean: 0.9015, Min-F1: 0.0628, AUC: 0.9577
+[creditcard | SVC | DAECEBO2_PSI0 | seed 45] G-mean: 0.1482, Min-F1: 0.0026, AUC: 0.8916
+[creditcard | CART | DAECEBO2_Sanity_K1_lam1 | seed 45] G-mean: 0.7717, Min-F1: 0.6120, AUC: 0.7976
+[creditcard | KNN | DAECEBO2_Sanity_K1_lam1 | seed 45] G-mean: 0.8646, Min-F1: 0.1590, AUC: 0.8842
+[creditcard | GaussianNB | DAECEBO2_Sanity_K1_lam1 | seed 45] G-mean: 0.9091, Min-F1: 0.0525, AUC: 0.9670
+[creditcard | SVC | DAECEBO2_Sanity_K1_lam1 | seed 45] G-mean: 0.4167, Min-F1: 0.0028, AUC: 0.7631
+[creditcard | CART | None | seed 46] G-mean: 0.8120, Min-F1: 0.6667, AUC: 0.8296
+[creditcard | KNN | None | seed 46] G-mean: 0.7785, Min-F1: 0.6064, AUC: 0.8546
+[creditcard | GaussianNB | None | seed 46] G-mean: 0.8835, Min-F1: 0.0874, AUC: 0.9599
+[creditcard | SVC | None | seed 46] G-mean: 0.5925, Min-F1: 0.5197, AUC: 0.9842
+[creditcard | CART | SMOTE | seed 46] G-mean: 0.8371, Min-F1: 0.4444, AUC: 0.8501
+[creditcard | KNN | SMOTE | seed 46] G-mean: 0.8837, Min-F1: 0.0893, AUC: 0.9116
+[creditcard | GaussianNB | SMOTE | seed 46] G-mean: 0.8937, Min-F1: 0.0790, AUC: 0.9613
+[creditcard | SVC | SMOTE | seed 46] G-mean: 0.4157, Min-F1: 0.0030, AUC: 0.8806
+[creditcard | CART | BorderlineSMOTE | seed 46] G-mean: 0.8248, Min-F1: 0.5899, AUC: 0.8400
+[creditcard | KNN | BorderlineSMOTE | seed 46] G-mean: 0.8659, Min-F1: 0.2073, AUC: 0.8803
+[creditcard | GaussianNB | BorderlineSMOTE | seed 46] G-mean: 0.9048, Min-F1: 0.0783, AUC: 0.9640
+[creditcard | SVC | BorderlineSMOTE | seed 46] G-mean: 0.4191, Min-F1: 0.0031, AUC: 0.9188
+[creditcard | CART | ADASYN | seed 46] G-mean: 0.7984, Min-F1: 0.4800, AUC: 0.8185
+[creditcard | KNN | ADASYN | seed 46] G-mean: 0.8900, Min-F1: 0.0610, AUC: 0.9199
+[creditcard | GaussianNB | ADASYN | seed 46] G-mean: 0.8999, Min-F1: 0.0573, AUC: 0.9655
+[creditcard | SVC | ADASYN | seed 46] G-mean: 0.3832, Min-F1: 0.0027, AUC: 0.7542
+[creditcard | CART | G-SMOTE | seed 46] G-mean: 0.8052, Min-F1: 0.5398, AUC: 0.8240
+[creditcard | KNN | G-SMOTE | seed 46] G-mean: 0.8708, Min-F1: 0.1635, AUC: 0.8894
+[creditcard | GaussianNB | G-SMOTE | seed 46] G-mean: 0.8939, Min-F1: 0.0807, AUC: 0.9619
+[creditcard | SVC | G-SMOTE | seed 46] G-mean: 0.8436, Min-F1: 0.0102, AUC: 0.9440
+[creditcard | CART | CCR | seed 46] G-mean: 0.8872, Min-F1: 0.1333, AUC: 0.8922
+[creditcard | KNN | CCR | seed 46] G-mean: 0.8643, Min-F1: 0.1503, AUC: 0.8779
+[creditcard | GaussianNB | CCR | seed 46] G-mean: 0.8876, Min-F1: 0.0762, AUC: 0.9580
+[creditcard | SVC | CCR | seed 46] G-mean: 0.9212, Min-F1: 0.0778, AUC: 0.9669
+[creditcard | CART | A-SUWO | seed 46] G-mean: 0.8438, Min-F1: 0.5630, AUC: 0.8558
+[creditcard | KNN | A-SUWO | seed 46] G-mean: 0.8050, Min-F1: 0.4900, AUC: 0.8504
+[creditcard | GaussianNB | A-SUWO | seed 46] G-mean: 0.9131, Min-F1: 0.0654, AUC: 0.9708
+[creditcard | SVC | A-SUWO | seed 46] G-mean: 0.4947, Min-F1: 0.0030, AUC: 0.7787
+[creditcard | CART | MLOS | seed 46] G-mean: 0.0344, Min-F1: 0.0021, AUC: 0.3944
+[creditcard | KNN | MLOS | seed 46] G-mean: 0.0137, Min-F1: 0.0019, AUC: 0.2058
+[creditcard | GaussianNB | MLOS | seed 46] G-mean: 0.0423, Min-F1: 0.0026, AUC: 0.0434
+[creditcard | SVC | MLOS | seed 46] G-mean: 0.0000, Min-F1: 0.0026, AUC: 0.4000
+[creditcard | CART | ECEBO | seed 46] G-mean: 0.7988, Min-F1: 0.6417, AUC: 0.8189
+[creditcard | KNN | ECEBO | seed 46] G-mean: 0.8587, Min-F1: 0.1611, AUC: 0.8895
+[creditcard | GaussianNB | ECEBO | seed 46] G-mean: 0.9085, Min-F1: 0.0511, AUC: 0.9666
+[creditcard | SVC | ECEBO | seed 46] G-mean: 0.4365, Min-F1: 0.0029, AUC: 0.7469
+[creditcard | CART | ECEBO_PSI0 | seed 46] G-mean: 0.7974, Min-F1: 0.2844, AUC: 0.8173
+[creditcard | KNN | ECEBO_PSI0 | seed 46] G-mean: 0.8788, Min-F1: 0.0612, AUC: 0.9077
+[creditcard | GaussianNB | ECEBO_PSI0 | seed 46] G-mean: 0.9084, Min-F1: 0.0509, AUC: 0.9662
+[creditcard | SVC | ECEBO_PSI0 | seed 46] G-mean: 0.1640, Min-F1: 0.0026, AUC: 0.8961
+[creditcard | CART | DAECEBO2 | seed 46] G-mean: 0.7854, Min-F1: 0.6784, AUC: 0.8084
+[creditcard | KNN | DAECEBO2 | seed 46] G-mean: 0.8767, Min-F1: 0.1617, AUC: 0.9002
+[creditcard | GaussianNB | DAECEBO2 | seed 46] G-mean: 0.9017, Min-F1: 0.0637, AUC: 0.9591
+[creditcard | SVC | DAECEBO2 | seed 46] G-mean: 0.2481, Min-F1: 0.0026, AUC: 0.8972
+[creditcard | CART | DAECEBO2_PSI0 | seed 46] G-mean: 0.8855, Min-F1: 0.3333, AUC: 0.8917
+[creditcard | KNN | DAECEBO2_PSI0 | seed 46] G-mean: 0.8931, Min-F1: 0.0532, AUC: 0.9272
+[creditcard | GaussianNB | DAECEBO2_PSI0 | seed 46] G-mean: 0.9015, Min-F1: 0.0628, AUC: 0.9577
+[creditcard | SVC | DAECEBO2_PSI0 | seed 46] G-mean: 0.7556, Min-F1: 0.0065, AUC: 0.8976
+[creditcard | CART | DAECEBO2_Sanity_K1_lam1 | seed 46] G-mean: 0.7988, Min-F1: 0.6417, AUC: 0.8189
+[creditcard | KNN | DAECEBO2_Sanity_K1_lam1 | seed 46] G-mean: 0.8587, Min-F1: 0.1611, AUC: 0.8895
+[creditcard | GaussianNB | DAECEBO2_Sanity_K1_lam1 | seed 46] G-mean: 0.9085, Min-F1: 0.0511, AUC: 0.9666
+[creditcard | SVC | DAECEBO2_Sanity_K1_lam1 | seed 46] G-mean: 0.4365, Min-F1: 0.0029, AUC: 0.7469
+[creditcard | CART | None | seed 47] G-mean: 0.8249, Min-F1: 0.6564, AUC: 0.8402
+[creditcard | KNN | None | seed 47] G-mean: 0.7785, Min-F1: 0.6162, AUC: 0.8654
+[creditcard | GaussianNB | None | seed 47] G-mean: 0.8835, Min-F1: 0.0874, AUC: 0.9599
+[creditcard | SVC | None | seed 47] G-mean: 0.5925, Min-F1: 0.5197, AUC: 0.9791
+[creditcard | CART | SMOTE | seed 47] G-mean: 0.8622, Min-F1: 0.4844, AUC: 0.8715
+[creditcard | KNN | SMOTE | seed 47] G-mean: 0.8892, Min-F1: 0.0876, AUC: 0.9275
+[creditcard | GaussianNB | SMOTE | seed 47] G-mean: 0.8937, Min-F1: 0.0789, AUC: 0.9612
+[creditcard | SVC | SMOTE | seed 47] G-mean: 0.4844, Min-F1: 0.0033, AUC: 0.9413
+[creditcard | CART | BorderlineSMOTE | seed 47] G-mean: 0.8118, Min-F1: 0.5611, AUC: 0.8293
+[creditcard | KNN | BorderlineSMOTE | seed 47] G-mean: 0.8718, Min-F1: 0.2003, AUC: 0.8908
+[creditcard | GaussianNB | BorderlineSMOTE | seed 47] G-mean: 0.9048, Min-F1: 0.0785, AUC: 0.9640
+[creditcard | SVC | BorderlineSMOTE | seed 47] G-mean: 0.4729, Min-F1: 0.0033, AUC: 0.9097
+[creditcard | CART | ADASYN | seed 47] G-mean: 0.8050, Min-F1: 0.4880, AUC: 0.8238
+[creditcard | KNN | ADASYN | seed 47] G-mean: 0.9008, Min-F1: 0.0600, AUC: 0.9256
+[creditcard | GaussianNB | ADASYN | seed 47] G-mean: 0.8999, Min-F1: 0.0573, AUC: 0.9654
+[creditcard | SVC | ADASYN | seed 47] G-mean: 0.3814, Min-F1: 0.0028, AUC: 0.7607
+[creditcard | CART | G-SMOTE | seed 47] G-mean: 0.8182, Min-F1: 0.5362, AUC: 0.8346
+[creditcard | KNN | G-SMOTE | seed 47] G-mean: 0.8759, Min-F1: 0.1423, AUC: 0.8949
+[creditcard | GaussianNB | G-SMOTE | seed 47] G-mean: 0.8939, Min-F1: 0.0806, AUC: 0.9619
+[creditcard | SVC | G-SMOTE | seed 47] G-mean: 0.5714, Min-F1: 0.0038, AUC: 0.9356
+[creditcard | CART | CCR | seed 47] G-mean: 0.8989, Min-F1: 0.1347, AUC: 0.9027
+[creditcard | KNN | CCR | seed 47] G-mean: 0.8580, Min-F1: 0.1440, AUC: 0.8887
+[creditcard | GaussianNB | CCR | seed 47] G-mean: 0.8875, Min-F1: 0.0761, AUC: 0.9580
+[creditcard | SVC | CCR | seed 47] G-mean: 0.4777, Min-F1: 0.0033, AUC: 0.9223
+[creditcard | CART | A-SUWO | seed 47] G-mean: 0.8437, Min-F1: 0.5296, AUC: 0.8557
+[creditcard | KNN | A-SUWO | seed 47] G-mean: 0.8114, Min-F1: 0.4321, AUC: 0.8450
+[creditcard | GaussianNB | A-SUWO | seed 47] G-mean: 0.9007, Min-F1: 0.0599, AUC: 0.9640
+[creditcard | SVC | A-SUWO | seed 47] G-mean: 0.3451, Min-F1: 0.0025, AUC: 0.7135
+[creditcard | CART | MLOS | seed 47] G-mean: 0.0370, Min-F1: 0.0022, AUC: 0.4157
+[creditcard | KNN | MLOS | seed 47] G-mean: 0.0076, Min-F1: 0.0018, AUC: 0.1999
+[creditcard | GaussianNB | MLOS | seed 47] G-mean: 0.0360, Min-F1: 0.0026, AUC: 0.0437
+[creditcard | SVC | MLOS | seed 47] G-mean: 0.0000, Min-F1: 0.0026, AUC: 0.3425
+[creditcard | CART | ECEBO | seed 47] G-mean: 0.7717, Min-F1: 0.6292, AUC: 0.7977
+[creditcard | KNN | ECEBO | seed 47] G-mean: 0.8585, Min-F1: 0.1577, AUC: 0.9002
+[creditcard | GaussianNB | ECEBO | seed 47] G-mean: 0.9083, Min-F1: 0.0507, AUC: 0.9669
+[creditcard | SVC | ECEBO | seed 47] G-mean: 0.4466, Min-F1: 0.0029, AUC: 0.7585
+[creditcard | CART | ECEBO_PSI0 | seed 47] G-mean: 0.7492, Min-F1: 0.2304, AUC: 0.7797
+[creditcard | KNN | ECEBO_PSI0 | seed 47] G-mean: 0.8908, Min-F1: 0.0641, AUC: 0.9085
+[creditcard | GaussianNB | ECEBO_PSI0 | seed 47] G-mean: 0.9082, Min-F1: 0.0502, AUC: 0.9666
+[creditcard | SVC | ECEBO_PSI0 | seed 47] G-mean: 0.2189, Min-F1: 0.0026, AUC: 0.8850
+[creditcard | CART | DAECEBO2 | seed 47] G-mean: 0.8054, Min-F1: 0.6932, AUC: 0.8243
+[creditcard | KNN | DAECEBO2 | seed 47] G-mean: 0.8763, Min-F1: 0.1515, AUC: 0.9159
+[creditcard | GaussianNB | DAECEBO2 | seed 47] G-mean: 0.9018, Min-F1: 0.0637, AUC: 0.9592
+[creditcard | SVC | DAECEBO2 | seed 47] G-mean: 0.4070, Min-F1: 0.0028, AUC: 0.8090
+[creditcard | CART | DAECEBO2_PSI0 | seed 47] G-mean: 0.8614, Min-F1: 0.3382, AUC: 0.8706
+[creditcard | KNN | DAECEBO2_PSI0 | seed 47] G-mean: 0.8862, Min-F1: 0.0495, AUC: 0.9104
+[creditcard | GaussianNB | DAECEBO2_PSI0 | seed 47] G-mean: 0.9015, Min-F1: 0.0628, AUC: 0.9577
+[creditcard | SVC | DAECEBO2_PSI0 | seed 47] G-mean: 0.5270, Min-F1: 0.0036, AUC: 0.9492
+[creditcard | CART | DAECEBO2_Sanity_K1_lam1 | seed 47] G-mean: 0.7717, Min-F1: 0.6292, AUC: 0.7977
+[creditcard | KNN | DAECEBO2_Sanity_K1_lam1 | seed 47] G-mean: 0.8585, Min-F1: 0.1577, AUC: 0.9002
+[creditcard | GaussianNB | DAECEBO2_Sanity_K1_lam1 | seed 47] G-mean: 0.9083, Min-F1: 0.0507, AUC: 0.9669
+[creditcard | SVC | DAECEBO2_Sanity_K1_lam1 | seed 47] G-mean: 0.4466, Min-F1: 0.0029, AUC: 0.7585
+[creditcard | CART | None | seed 48] G-mean: 0.8119, Min-F1: 0.6526, AUC: 0.8295
+[creditcard | KNN | None | seed 48] G-mean: 0.7717, Min-F1: 0.6474, AUC: 0.8653
+[creditcard | GaussianNB | None | seed 48] G-mean: 0.8835, Min-F1: 0.0874, AUC: 0.9599
+[creditcard | SVC | None | seed 48] G-mean: 0.5925, Min-F1: 0.5197, AUC: 0.9818
+[creditcard | CART | SMOTE | seed 48] G-mean: 0.8436, Min-F1: 0.4838, AUC: 0.8556
+[creditcard | KNN | SMOTE | seed 48] G-mean: 0.8948, Min-F1: 0.0869, AUC: 0.9119
+[creditcard | GaussianNB | SMOTE | seed 48] G-mean: 0.8936, Min-F1: 0.0787, AUC: 0.9612
+[creditcard | SVC | SMOTE | seed 48] G-mean: 0.8737, Min-F1: 0.0159, AUC: 0.9464
+[creditcard | CART | BorderlineSMOTE | seed 48] G-mean: 0.8312, Min-F1: 0.5963, AUC: 0.8453
+[creditcard | KNN | BorderlineSMOTE | seed 48] G-mean: 0.8660, Min-F1: 0.2119, AUC: 0.8801
+[creditcard | GaussianNB | BorderlineSMOTE | seed 48] G-mean: 0.9048, Min-F1: 0.0784, AUC: 0.9640
+[creditcard | SVC | BorderlineSMOTE | seed 48] G-mean: 0.5720, Min-F1: 0.0038, AUC: 0.9085
+[creditcard | CART | ADASYN | seed 48] G-mean: 0.8116, Min-F1: 0.4901, AUC: 0.8291
+[creditcard | KNN | ADASYN | seed 48] G-mean: 0.8903, Min-F1: 0.0622, AUC: 0.9093
+[creditcard | GaussianNB | ADASYN | seed 48] G-mean: 0.8999, Min-F1: 0.0573, AUC: 0.9655
+[creditcard | SVC | ADASYN | seed 48] G-mean: 0.3404, Min-F1: 0.0028, AUC: 0.8362
+[creditcard | CART | G-SMOTE | seed 48] G-mean: 0.8052, Min-F1: 0.5495, AUC: 0.8240
+[creditcard | KNN | G-SMOTE | seed 48] G-mean: 0.8768, Min-F1: 0.1640, AUC: 0.8951
+[creditcard | GaussianNB | G-SMOTE | seed 48] G-mean: 0.8939, Min-F1: 0.0807, AUC: 0.9619
+[creditcard | SVC | G-SMOTE | seed 48] G-mean: 0.2562, Min-F1: 0.0027, AUC: 0.8864
+[creditcard | CART | CCR | seed 48] G-mean: 0.8871, Min-F1: 0.1305, AUC: 0.8920
+[creditcard | KNN | CCR | seed 48] G-mean: 0.8583, Min-F1: 0.1496, AUC: 0.8785
+[creditcard | GaussianNB | CCR | seed 48] G-mean: 0.8875, Min-F1: 0.0761, AUC: 0.9580
+[creditcard | SVC | CCR | seed 48] G-mean: 0.8750, Min-F1: 0.0121, AUC: 0.9672
+[creditcard | CART | A-SUWO | seed 48] G-mean: 0.8561, Min-F1: 0.5036, AUC: 0.8662
+[creditcard | KNN | A-SUWO | seed 48] G-mean: 0.8114, Min-F1: 0.4336, AUC: 0.8555
+[creditcard | GaussianNB | A-SUWO | seed 48] G-mean: 0.8997, Min-F1: 0.0567, AUC: 0.9671
+[creditcard | SVC | A-SUWO | seed 48] G-mean: 0.3681, Min-F1: 0.0026, AUC: 0.7156
+[creditcard | CART | MLOS | seed 48] G-mean: 0.0371, Min-F1: 0.0020, AUC: 0.3839
+[creditcard | KNN | MLOS | seed 48] G-mean: 0.0077, Min-F1: 0.0019, AUC: 0.2056
+[creditcard | GaussianNB | MLOS | seed 48] G-mean: 0.0413, Min-F1: 0.0026, AUC: 0.0412
+[creditcard | SVC | MLOS | seed 48] G-mean: 0.0000, Min-F1: 0.0026, AUC: 0.2484
+[creditcard | CART | ECEBO | seed 48] G-mean: 0.6994, Min-F1: 0.5169, AUC: 0.7444
+[creditcard | KNN | ECEBO | seed 48] G-mean: 0.8706, Min-F1: 0.1574, AUC: 0.8949
+[creditcard | GaussianNB | ECEBO | seed 48] G-mean: 0.9082, Min-F1: 0.0502, AUC: 0.9679
+[creditcard | SVC | ECEBO | seed 48] G-mean: 0.4200, Min-F1: 0.0029, AUC: 0.7751
+[creditcard | CART | ECEBO_PSI0 | seed 48] G-mean: 0.7841, Min-F1: 0.2795, AUC: 0.8067
+[creditcard | KNN | ECEBO_PSI0 | seed 48] G-mean: 0.8898, Min-F1: 0.0603, AUC: 0.9078
+[creditcard | GaussianNB | ECEBO_PSI0 | seed 48] G-mean: 0.9080, Min-F1: 0.0498, AUC: 0.9675
+[creditcard | SVC | ECEBO_PSI0 | seed 48] G-mean: 0.6446, Min-F1: 0.0044, AUC: 0.9179
+[creditcard | CART | DAECEBO2 | seed 48] G-mean: 0.8120, Min-F1: 0.6631, AUC: 0.8296
+[creditcard | KNN | DAECEBO2 | seed 48] G-mean: 0.8823, Min-F1: 0.1540, AUC: 0.9057
+[creditcard | GaussianNB | DAECEBO2 | seed 48] G-mean: 0.9017, Min-F1: 0.0637, AUC: 0.9593
+[creditcard | SVC | DAECEBO2 | seed 48] G-mean: 0.2244, Min-F1: 0.0026, AUC: 0.9097
+[creditcard | CART | DAECEBO2_PSI0 | seed 48] G-mean: 0.8672, Min-F1: 0.3047, AUC: 0.8755
+[creditcard | KNN | DAECEBO2_PSI0 | seed 48] G-mean: 0.8913, Min-F1: 0.0488, AUC: 0.9112
+[creditcard | GaussianNB | DAECEBO2_PSI0 | seed 48] G-mean: 0.9015, Min-F1: 0.0628, AUC: 0.9577
+[creditcard | SVC | DAECEBO2_PSI0 | seed 48] G-mean: 0.1645, Min-F1: 0.0025, AUC: 0.8943
+[creditcard | CART | DAECEBO2_Sanity_K1_lam1 | seed 48] G-mean: 0.6994, Min-F1: 0.5169, AUC: 0.7444
+[creditcard | KNN | DAECEBO2_Sanity_K1_lam1 | seed 48] G-mean: 0.8706, Min-F1: 0.1574, AUC: 0.8949
+[creditcard | GaussianNB | DAECEBO2_Sanity_K1_lam1 | seed 48] G-mean: 0.9082, Min-F1: 0.0502, AUC: 0.9679
+[creditcard | SVC | DAECEBO2_Sanity_K1_lam1 | seed 48] G-mean: 0.4200, Min-F1: 0.0029, AUC: 0.7751
+[creditcard | CART | None | seed 49] G-mean: 0.8185, Min-F1: 0.6562, AUC: 0.8349
+[creditcard | KNN | None | seed 49] G-mean: 0.7785, Min-F1: 0.6264, AUC: 0.8653
+[creditcard | GaussianNB | None | seed 49] G-mean: 0.8835, Min-F1: 0.0874, AUC: 0.9599
+[creditcard | SVC | None | seed 49] G-mean: 0.5925, Min-F1: 0.5197, AUC: 0.9812
+[creditcard | CART | SMOTE | seed 49] G-mean: 0.8373, Min-F1: 0.4907, AUC: 0.8503
+[creditcard | KNN | SMOTE | seed 49] G-mean: 0.8890, Min-F1: 0.0858, AUC: 0.9168
+[creditcard | GaussianNB | SMOTE | seed 49] G-mean: 0.8937, Min-F1: 0.0789, AUC: 0.9613
+[creditcard | SVC | SMOTE | seed 49] G-mean: 0.2127, Min-F1: 0.0026, AUC: 0.9325
+[creditcard | CART | BorderlineSMOTE | seed 49] G-mean: 0.8248, Min-F1: 0.5714, AUC: 0.8400
+[creditcard | KNN | BorderlineSMOTE | seed 49] G-mean: 0.8718, Min-F1: 0.2028, AUC: 0.8852
+[creditcard | GaussianNB | BorderlineSMOTE | seed 49] G-mean: 0.9048, Min-F1: 0.0785, AUC: 0.9641
+[creditcard | SVC | BorderlineSMOTE | seed 49] G-mean: 0.5721, Min-F1: 0.0038, AUC: 0.9167
+[creditcard | CART | ADASYN | seed 49] G-mean: 0.8051, Min-F1: 0.4980, AUC: 0.8238
+[creditcard | KNN | ADASYN | seed 49] G-mean: 0.8905, Min-F1: 0.0629, AUC: 0.9145
+[creditcard | GaussianNB | ADASYN | seed 49] G-mean: 0.8999, Min-F1: 0.0573, AUC: 0.9655
+[creditcard | SVC | ADASYN | seed 49] G-mean: 0.1918, Min-F1: 0.0026, AUC: 0.8373
+[creditcard | CART | G-SMOTE | seed 49] G-mean: 0.8311, Min-F1: 0.5652, AUC: 0.8452
+[creditcard | KNN | G-SMOTE | seed 49] G-mean: 0.8825, Min-F1: 0.1591, AUC: 0.8951
+[creditcard | GaussianNB | G-SMOTE | seed 49] G-mean: 0.8939, Min-F1: 0.0805, AUC: 0.9619
+[creditcard | SVC | G-SMOTE | seed 49] G-mean: 0.4147, Min-F1: 0.0029, AUC: 0.8522
+[creditcard | CART | CCR | seed 49] G-mean: 0.8932, Min-F1: 0.1367, AUC: 0.8976
+[creditcard | KNN | CCR | seed 49] G-mean: 0.8584, Min-F1: 0.1542, AUC: 0.8786
+[creditcard | GaussianNB | CCR | seed 49] G-mean: 0.8875, Min-F1: 0.0761, AUC: 0.9580
+[creditcard | SVC | CCR | seed 49] G-mean: 0.9030, Min-F1: 0.0341, AUC: 0.9707
+[creditcard | CART | A-SUWO | seed 49] G-mean: 0.8627, Min-F1: 0.7035, AUC: 0.8721
+[creditcard | KNN | A-SUWO | seed 49] G-mean: 0.8179, Min-F1: 0.4468, AUC: 0.8556
+[creditcard | GaussianNB | A-SUWO | seed 49] G-mean: 0.9174, Min-F1: 0.0611, AUC: 0.9636
+[creditcard | SVC | A-SUWO | seed 49] G-mean: 0.3912, Min-F1: 0.0027, AUC: 0.6941
+[creditcard | CART | MLOS | seed 49] G-mean: 0.0413, Min-F1: 0.0020, AUC: 0.3788
+[creditcard | KNN | MLOS | seed 49] G-mean: 0.0134, Min-F1: 0.0020, AUC: 0.2112
+[creditcard | GaussianNB | MLOS | seed 49] G-mean: 0.0411, Min-F1: 0.0026, AUC: 0.0426
+[creditcard | SVC | MLOS | seed 49] G-mean: 0.0000, Min-F1: 0.0026, AUC: 0.4328
+[creditcard | CART | ECEBO | seed 49] G-mean: 0.7716, Min-F1: 0.5833, AUC: 0.7976
+[creditcard | KNN | ECEBO | seed 49] G-mean: 0.8708, Min-F1: 0.1636, AUC: 0.8952
+[creditcard | GaussianNB | ECEBO | seed 49] G-mean: 0.9128, Min-F1: 0.0488, AUC: 0.9682
+[creditcard | SVC | ECEBO | seed 49] G-mean: 0.4388, Min-F1: 0.0029, AUC: 0.7533
+[creditcard | CART | ECEBO_PSI0 | seed 49] G-mean: 0.7770, Min-F1: 0.2426, AUC: 0.8009
+[creditcard | KNN | ECEBO_PSI0 | seed 49] G-mean: 0.8852, Min-F1: 0.0644, AUC: 0.9084
+[creditcard | GaussianNB | ECEBO_PSI0 | seed 49] G-mean: 0.9126, Min-F1: 0.0483, AUC: 0.9678
+[creditcard | SVC | ECEBO_PSI0 | seed 49] G-mean: 0.4192, Min-F1: 0.0028, AUC: 0.7703
+[creditcard | CART | DAECEBO2 | seed 49] G-mean: 0.8054, Min-F1: 0.6703, AUC: 0.8243
+[creditcard | KNN | DAECEBO2 | seed 49] G-mean: 0.8885, Min-F1: 0.1639, AUC: 0.9113
+[creditcard | GaussianNB | DAECEBO2 | seed 49] G-mean: 0.9017, Min-F1: 0.0635, AUC: 0.9592
+[creditcard | SVC | DAECEBO2 | seed 49] G-mean: 0.1743, Min-F1: 0.0026, AUC: 0.9093
+[creditcard | CART | DAECEBO2_PSI0 | seed 49] G-mean: 0.8854, Min-F1: 0.3169, AUC: 0.8915
+[creditcard | KNN | DAECEBO2_PSI0 | seed 49] G-mean: 0.8869, Min-F1: 0.0513, AUC: 0.9118
+[creditcard | GaussianNB | DAECEBO2_PSI0 | seed 49] G-mean: 0.9015, Min-F1: 0.0628, AUC: 0.9577
+[creditcard | SVC | DAECEBO2_PSI0 | seed 49] G-mean: 0.4000, Min-F1: 0.0030, AUC: 0.8788
+[creditcard | CART | DAECEBO2_Sanity_K1_lam1 | seed 49] G-mean: 0.7716, Min-F1: 0.5833, AUC: 0.7976
+[creditcard | KNN | DAECEBO2_Sanity_K1_lam1 | seed 49] G-mean: 0.8708, Min-F1: 0.1636, AUC: 0.8952
+[creditcard | GaussianNB | DAECEBO2_Sanity_K1_lam1 | seed 49] G-mean: 0.9128, Min-F1: 0.0488, AUC: 0.9682
+[creditcard | SVC | DAECEBO2_Sanity_K1_lam1 | seed 49] G-mean: 0.4388, Min-F1: 0.0029, AUC: 0.7533
+[creditcard | CART | None | seed 50] G-mean: 0.8185, Min-F1: 0.6528, AUC: 0.8349
+[creditcard | KNN | None | seed 50] G-mean: 0.7717, Min-F1: 0.6292, AUC: 0.8654
+[creditcard | GaussianNB | None | seed 50] G-mean: 0.8835, Min-F1: 0.0874, AUC: 0.9599
+[creditcard | SVC | None | seed 50] G-mean: 0.5925, Min-F1: 0.5197, AUC: 0.9805
+[creditcard | CART | SMOTE | seed 50] G-mean: 0.8309, Min-F1: 0.4815, AUC: 0.8450
+[creditcard | KNN | SMOTE | seed 50] G-mean: 0.8943, Min-F1: 0.0832, AUC: 0.9069
+[creditcard | GaussianNB | SMOTE | seed 50] G-mean: 0.8936, Min-F1: 0.0788, AUC: 0.9613
+[creditcard | SVC | SMOTE | seed 50] G-mean: 0.1914, Min-F1: 0.0027, AUC: 0.9232
+[creditcard | CART | BorderlineSMOTE | seed 50] G-mean: 0.8248, Min-F1: 0.5899, AUC: 0.8400
+[creditcard | KNN | BorderlineSMOTE | seed 50] G-mean: 0.8601, Min-F1: 0.2188, AUC: 0.8805
+[creditcard | GaussianNB | BorderlineSMOTE | seed 50] G-mean: 0.9048, Min-F1: 0.0784, AUC: 0.9640
+[creditcard | SVC | BorderlineSMOTE | seed 50] G-mean: 0.8953, Min-F1: 0.0276, AUC: 0.9503
+[creditcard | CART | ADASYN | seed 50] G-mean: 0.7850, Min-F1: 0.4696, AUC: 0.8078
+[creditcard | KNN | ADASYN | seed 50] G-mean: 0.8950, Min-F1: 0.0593, AUC: 0.9043
+[creditcard | GaussianNB | ADASYN | seed 50] G-mean: 0.8999, Min-F1: 0.0574, AUC: 0.9654
+[creditcard | SVC | ADASYN | seed 50] G-mean: 0.3419, Min-F1: 0.0028, AUC: 0.8342
+[creditcard | CART | G-SMOTE | seed 50] G-mean: 0.8117, Min-F1: 0.5124, AUC: 0.8292
+[creditcard | KNN | G-SMOTE | seed 50] G-mean: 0.8642, Min-F1: 0.1462, AUC: 0.8843
+[creditcard | GaussianNB | G-SMOTE | seed 50] G-mean: 0.8940, Min-F1: 0.0808, AUC: 0.9618
+[creditcard | SVC | G-SMOTE | seed 50] G-mean: 0.4767, Min-F1: 0.0033, AUC: 0.9132
+[creditcard | CART | CCR | seed 50] G-mean: 0.8929, Min-F1: 0.1318, AUC: 0.8973
+[creditcard | KNN | CCR | seed 50] G-mean: 0.8585, Min-F1: 0.1562, AUC: 0.8728
+[creditcard | GaussianNB | CCR | seed 50] G-mean: 0.8876, Min-F1: 0.0762, AUC: 0.9580
+[creditcard | SVC | CCR | seed 50] G-mean: 0.8702, Min-F1: 0.0138, AUC: 0.9326
+[creditcard | CART | A-SUWO | seed 50] G-mean: 0.8503, Min-F1: 0.6800, AUC: 0.8614
+[creditcard | KNN | A-SUWO | seed 50] G-mean: 0.8051, Min-F1: 0.5083, AUC: 0.8504
+[creditcard | GaussianNB | A-SUWO | seed 50] G-mean: 0.9155, Min-F1: 0.0766, AUC: 0.9528
+[creditcard | SVC | A-SUWO | seed 50] G-mean: 0.6370, Min-F1: 0.0043, AUC: 0.8374
+[creditcard | CART | MLOS | seed 50] G-mean: 0.0342, Min-F1: 0.0020, AUC: 0.3784
+[creditcard | KNN | MLOS | seed 50] G-mean: 0.0133, Min-F1: 0.0019, AUC: 0.2003
+[creditcard | GaussianNB | MLOS | seed 50] G-mean: 0.0381, Min-F1: 0.0026, AUC: 0.0441
+[creditcard | SVC | MLOS | seed 50] G-mean: 0.0000, Min-F1: 0.0026, AUC: 0.4643
+[creditcard | CART | ECEBO | seed 50] G-mean: 0.7069, Min-F1: 0.5341, AUC: 0.7498
+[creditcard | KNN | ECEBO | seed 50] G-mean: 0.8770, Min-F1: 0.1708, AUC: 0.8897
+[creditcard | GaussianNB | ECEBO | seed 50] G-mean: 0.9139, Min-F1: 0.0512, AUC: 0.9684
+[creditcard | SVC | ECEBO | seed 50] G-mean: 0.4261, Min-F1: 0.0028, AUC: 0.7369
+[creditcard | CART | ECEBO_PSI0 | seed 50] G-mean: 0.8362, Min-F1: 0.2920, AUC: 0.8490
+[creditcard | KNN | ECEBO_PSI0 | seed 50] G-mean: 0.8851, Min-F1: 0.0639, AUC: 0.8982
+[creditcard | GaussianNB | ECEBO_PSI0 | seed 50] G-mean: 0.9136, Min-F1: 0.0506, AUC: 0.9680
+[creditcard | SVC | ECEBO_PSI0 | seed 50] G-mean: 0.2126, Min-F1: 0.0026, AUC: 0.8961
+[creditcard | CART | DAECEBO2 | seed 50] G-mean: 0.8055, Min-F1: 0.7011, AUC: 0.8243
+[creditcard | KNN | DAECEBO2 | seed 50] G-mean: 0.8828, Min-F1: 0.1688, AUC: 0.9004
+[creditcard | GaussianNB | DAECEBO2 | seed 50] G-mean: 0.9017, Min-F1: 0.0637, AUC: 0.9593
+[creditcard | SVC | DAECEBO2 | seed 50] G-mean: 0.6286, Min-F1: 0.0043, AUC: 0.9191
+[creditcard | CART | DAECEBO2_PSI0 | seed 50] G-mean: 0.8674, Min-F1: 0.3272, AUC: 0.8758
+[creditcard | KNN | DAECEBO2_PSI0 | seed 50] G-mean: 0.8858, Min-F1: 0.0486, AUC: 0.9162
+[creditcard | GaussianNB | DAECEBO2_PSI0 | seed 50] G-mean: 0.9015, Min-F1: 0.0628, AUC: 0.9577
+[creditcard | SVC | DAECEBO2_PSI0 | seed 50] G-mean: 0.1582, Min-F1: 0.0026, AUC: 0.8908
+[creditcard | CART | DAECEBO2_Sanity_K1_lam1 | seed 50] G-mean: 0.7069, Min-F1: 0.5341, AUC: 0.7498
+[creditcard | KNN | DAECEBO2_Sanity_K1_lam1 | seed 50] G-mean: 0.8770, Min-F1: 0.1708, AUC: 0.8897
+[creditcard | GaussianNB | DAECEBO2_Sanity_K1_lam1 | seed 50] G-mean: 0.9139, Min-F1: 0.0512, AUC: 0.9684
+[creditcard | SVC | DAECEBO2_Sanity_K1_lam1 | seed 50] G-mean: 0.4261, Min-F1: 0.0028, AUC: 0.7369
+[creditcard | CART | None | seed 51] G-mean: 0.8250, Min-F1: 0.6882, AUC: 0.8402
+[creditcard | KNN | None | seed 51] G-mean: 0.7717, Min-F1: 0.6257, AUC: 0.8601
+[creditcard | GaussianNB | None | seed 51] G-mean: 0.8835, Min-F1: 0.0874, AUC: 0.9599
+[creditcard | SVC | None | seed 51] G-mean: 0.5925, Min-F1: 0.5197, AUC: 0.9792
+[creditcard | CART | SMOTE | seed 51] G-mean: 0.8560, Min-F1: 0.4825, AUC: 0.8662
+[creditcard | KNN | SMOTE | seed 51] G-mean: 0.8945, Min-F1: 0.0848, AUC: 0.9122
+[creditcard | GaussianNB | SMOTE | seed 51] G-mean: 0.8937, Min-F1: 0.0790, AUC: 0.9612
+[creditcard | SVC | SMOTE | seed 51] G-mean: 0.4590, Min-F1: 0.0032, AUC: 0.9447
+[creditcard | CART | BorderlineSMOTE | seed 51] G-mean: 0.8184, Min-F1: 0.6087, AUC: 0.8348
+[creditcard | KNN | BorderlineSMOTE | seed 51] G-mean: 0.8713, Min-F1: 0.1825, AUC: 0.8854
+[creditcard | GaussianNB | BorderlineSMOTE | seed 51] G-mean: 0.9048, Min-F1: 0.0785, AUC: 0.9640
+[creditcard | SVC | BorderlineSMOTE | seed 51] G-mean: 0.8738, Min-F1: 0.0128, AUC: 0.9556
+[creditcard | CART | ADASYN | seed 51] G-mean: 0.7713, Min-F1: 0.4516, AUC: 0.7972
+[creditcard | KNN | ADASYN | seed 51] G-mean: 0.9009, Min-F1: 0.0606, AUC: 0.9148
+[creditcard | GaussianNB | ADASYN | seed 51] G-mean: 0.8999, Min-F1: 0.0573, AUC: 0.9655
+[creditcard | SVC | ADASYN | seed 51] G-mean: 0.3425, Min-F1: 0.0026, AUC: 0.7803
+[creditcard | CART | G-SMOTE | seed 51] G-mean: 0.8248, Min-F1: 0.6066, AUC: 0.8401
+[creditcard | KNN | G-SMOTE | seed 51] G-mean: 0.8819, Min-F1: 0.1454, AUC: 0.8950
+[creditcard | GaussianNB | G-SMOTE | seed 51] G-mean: 0.8940, Min-F1: 0.0808, AUC: 0.9619
+[creditcard | SVC | G-SMOTE | seed 51] G-mean: 0.3852, Min-F1: 0.0028, AUC: 0.8505
+[creditcard | CART | CCR | seed 51] G-mean: 0.8932, Min-F1: 0.1367, AUC: 0.8976
+[creditcard | KNN | CCR | seed 51] G-mean: 0.8580, Min-F1: 0.1426, AUC: 0.8833
+[creditcard | GaussianNB | CCR | seed 51] G-mean: 0.8875, Min-F1: 0.0761, AUC: 0.9580
+[creditcard | SVC | CCR | seed 51] G-mean: 0.1895, Min-F1: 0.0026, AUC: 0.8930
+[creditcard | CART | A-SUWO | seed 51] G-mean: 0.8249, Min-F1: 0.6244, AUC: 0.8401
+[creditcard | KNN | A-SUWO | seed 51] G-mean: 0.8050, Min-F1: 0.4784, AUC: 0.8558
+[creditcard | GaussianNB | A-SUWO | seed 51] G-mean: 0.8990, Min-F1: 0.0546, AUC: 0.9626
+[creditcard | SVC | A-SUWO | seed 51] G-mean: 0.3547, Min-F1: 0.0025, AUC: 0.6846
+[creditcard | CART | MLOS | seed 51] G-mean: 0.0294, Min-F1: 0.0021, AUC: 0.3995
+[creditcard | KNN | MLOS | seed 51] G-mean: 0.0081, Min-F1: 0.0018, AUC: 0.2160
+[creditcard | GaussianNB | MLOS | seed 51] G-mean: 0.0432, Min-F1: 0.0026, AUC: 0.0416
+[creditcard | SVC | MLOS | seed 51] G-mean: 0.0000, Min-F1: 0.0026, AUC: 0.3184
+[creditcard | CART | ECEBO | seed 51] G-mean: 0.7508, Min-F1: 0.6543, AUC: 0.7818
+[creditcard | KNN | ECEBO | seed 51] G-mean: 0.6885, Min-F1: 0.1086, AUC: 0.7711
+[creditcard | GaussianNB | ECEBO | seed 51] G-mean: 0.9073, Min-F1: 0.0392, AUC: 0.9709
+[creditcard | SVC | ECEBO | seed 51] G-mean: 0.2381, Min-F1: 0.0024, AUC: 0.7414
+[creditcard | CART | ECEBO_PSI0 | seed 51] G-mean: 0.7494, Min-F1: 0.2500, AUC: 0.7800
+[creditcard | KNN | ECEBO_PSI0 | seed 51] G-mean: 0.7649, Min-F1: 0.0430, AUC: 0.8187
+[creditcard | GaussianNB | ECEBO_PSI0 | seed 51] G-mean: 0.9071, Min-F1: 0.0390, AUC: 0.9707
+[creditcard | SVC | ECEBO_PSI0 | seed 51] G-mean: 0.2021, Min-F1: 0.0026, AUC: 0.8692
+[creditcard | CART | DAECEBO2 | seed 51] G-mean: 0.8185, Min-F1: 0.6848, AUC: 0.8349
+[creditcard | KNN | DAECEBO2 | seed 51] G-mean: 0.8874, Min-F1: 0.1369, AUC: 0.9158
+[creditcard | GaussianNB | DAECEBO2 | seed 51] G-mean: 0.9014, Min-F1: 0.0625, AUC: 0.9591
+[creditcard | SVC | DAECEBO2 | seed 51] G-mean: 0.3458, Min-F1: 0.0029, AUC: 0.9021
+[creditcard | CART | DAECEBO2_PSI0 | seed 51] G-mean: 0.8791, Min-F1: 0.2857, AUC: 0.8859
+[creditcard | KNN | DAECEBO2_PSI0 | seed 51] G-mean: 0.8856, Min-F1: 0.0482, AUC: 0.9205
+[creditcard | GaussianNB | DAECEBO2_PSI0 | seed 51] G-mean: 0.9015, Min-F1: 0.0628, AUC: 0.9577
+[creditcard | SVC | DAECEBO2_PSI0 | seed 51] G-mean: 0.1910, Min-F1: 0.0025, AUC: 0.8995
+[creditcard | CART | DAECEBO2_Sanity_K1_lam1 | seed 51] G-mean: 0.7508, Min-F1: 0.6543, AUC: 0.7818
+[creditcard | KNN | DAECEBO2_Sanity_K1_lam1 | seed 51] G-mean: 0.6885, Min-F1: 0.1086, AUC: 0.7711
+[creditcard | GaussianNB | DAECEBO2_Sanity_K1_lam1 | seed 51] G-mean: 0.9073, Min-F1: 0.0392, AUC: 0.9709
+[creditcard | SVC | DAECEBO2_Sanity_K1_lam1 | seed 51] G-mean: 0.2381, Min-F1: 0.0024, AUC: 0.7414
+
+Final Phase 2 benchmark evaluation complete! Saved to results_stream/P2_raw.csv and results_stream/P2_blocks.csv

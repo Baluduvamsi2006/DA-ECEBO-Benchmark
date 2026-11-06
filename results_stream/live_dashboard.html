@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DA-ECEBO Benchmark Real-Time Live Monitor</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.96); }
+    }
+    .pulse-dot {
+      animation: pulse-subtle 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    @keyframes flash-decrease {
+      0% { color: #f43f5e; transform: scale(1.08); }
+      100% { color: #f87171; transform: scale(1); }
+    }
+    .flash-decrement {
+      animation: flash-decrease 0.6s ease-out;
+    }
+    .log-stream {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 11.5px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased p-3 sm:p-6 min-h-screen">
+  <div class="max-w-5xl mx-auto space-y-6">
+    
+    <!-- Top Live Header -->
+    <header class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl backdrop-blur-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2.5">
+          <span id="liveDot" class="w-3 h-3 rounded-full bg-emerald-500 pulse-dot shadow-[0_0_12px_rgba(16,185,129,0.7)]"></span>
+          <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white">DA-ECEBO Live Benchmark Monitor</h1>
+          <span id="connBadge" class="ml-2 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">LIVE STREAMING</span>
+        </div>
+        <p class="text-slate-400 text-xs sm:text-sm mt-1">Real-time telemetry, live countdown clock, and decreaser for Phase 2 benchmark</p>
+      </div>
+      <div class="flex items-center gap-3 self-start md:self-center">
+        <div class="text-right">
+          <div class="text-xs text-slate-400 font-medium">Last Telemetry</div>
+          <div id="lastUpdated" class="text-xs font-mono text-slate-200 font-semibold">Connecting...</div>
+        </div>
+        <button onclick="fetchStatus()" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+          Sync
+        </button>
+      </div>
+    </header>
+
+    <!-- REAL-TIME COUNT DECREASER & LIVE ETA BANNER -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      
+      <!-- Live Count Decreaser Card -->
+      <div class="bg-gradient-to-br from-rose-950/40 via-slate-900 to-slate-900 border border-rose-500/30 rounded-2xl p-5 shadow-xl relative overflow-hidden">
+        <div class="flex justify-between items-center text-xs font-bold uppercase tracking-wider text-rose-400">
+          <span class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-rose-500 pulse-dot"></span>
+            Live Count Decreaser
+          </span>
+          <span id="decrementBadge" class="px-2 py-0.5 rounded-full text-[10px] bg-rose-500/10 text-rose-300 border border-rose-500/20 font-mono">Decreasing...</span>
+        </div>
+        <div class="mt-2 flex items-baseline gap-3">
+          <span id="decreaserCount" class="text-4xl sm:text-5xl font-black text-rose-400 font-mono tracking-tight transition-all duration-300">596</span>
+          <div class="flex flex-col">
+            <span class="text-xs uppercase font-bold text-slate-400">cells remaining</span>
+            <span id="decreasedSoFar" class="text-[11px] text-emerald-400 font-mono font-medium">3,564 completed (85.67%)</span>
+          </div>
+        </div>
+        <div class="w-full bg-slate-800 h-2.5 rounded-full mt-3.5 overflow-hidden">
+          <div id="decreaserProgressBar" class="bg-gradient-to-r from-rose-500 to-amber-500 h-2.5 rounded-full transition-all duration-700" style="width: 14.33%"></div>
+        </div>
+        <div class="mt-2.5 flex justify-between text-xs text-slate-400 font-mono">
+          <span>Remaining workload: 14.33%</span>
+          <span class="text-rose-400 font-bold">&darr; Ticking down to 0</span>
+        </div>
+      </div>
+
+      <!-- Live ETA Countdown Clock Card -->
+      <div class="bg-gradient-to-br from-indigo-950/40 via-slate-900 to-slate-900 border border-indigo-500/30 rounded-2xl p-5 shadow-xl relative overflow-hidden">
+        <div class="flex justify-between items-center text-xs font-bold uppercase tracking-wider text-indigo-400">
+          <span class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Live Estimated Time Remaining
+          </span>
+          <span class="px-2 py-0.5 rounded-full text-[10px] bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 font-mono">Ticking Clock</span>
+        </div>
+        <div class="mt-2 flex items-baseline gap-2">
+          <span id="etaClock" class="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-sky-200 to-emerald-300 font-mono tracking-tight">1 hrs 52 min 46 sec</span>
+        </div>
+        <div class="mt-2 flex items-center justify-between text-xs text-slate-400 font-mono">
+          <span>Estimated Completion:</span>
+          <span id="targetTime" class="text-emerald-400 font-bold text-sm">~04:43:00 AM</span>
+        </div>
+        <div class="mt-3 pt-2.5 border-t border-slate-800 text-[11px] text-slate-400 flex justify-between items-center">
+          <span>Workload rate: ~12.5s/cell (creditcard 426k rows)</span>
+          <span class="text-indigo-400 font-semibold font-mono">Active countdown</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stat Hero Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      
+      <!-- Primary Progress Card -->
+      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-lg relative overflow-hidden">
+        <div class="flex justify-between items-center text-xs font-semibold uppercase tracking-wider text-slate-400">
+          <span>Benchmark Cells</span>
+          <span id="rawPercentBadge" class="text-emerald-400 font-bold font-mono">85.67%</span>
+        </div>
+        <div class="mt-2 flex items-baseline gap-2">
+          <span id="rawCount" class="text-3xl sm:text-4xl font-black text-white font-mono tracking-tight">3,564</span>
+          <span class="text-sm text-slate-500 font-medium">/ 4,160 rows</span>
+        </div>
+        <div class="w-full bg-slate-800 h-2.5 rounded-full mt-3 overflow-hidden">
+          <div id="rawProgressBar" class="bg-gradient-to-r from-emerald-500 to-teal-400 h-2.5 rounded-full transition-all duration-700" style="width: 85.67%"></div>
+        </div>
+        <div class="mt-2 flex justify-between text-xs text-slate-400 font-mono">
+          <span id="rawRemaining">596 remaining</span>
+          <span>10 Seeds (42-51)</span>
+        </div>
+      </div>
+
+      <!-- Stream Blocks Card -->
+      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-lg">
+        <div class="flex justify-between items-center text-xs font-semibold uppercase tracking-wider text-slate-400">
+          <span>Stream Horizon Blocks</span>
+          <span class="text-blue-400 font-bold font-mono">5 Blocks/Set</span>
+        </div>
+        <div class="mt-2 flex items-baseline gap-2">
+          <span id="blocksCount" class="text-3xl sm:text-4xl font-black text-white font-mono tracking-tight">12,620</span>
+          <span class="text-sm text-slate-500 font-medium">evaluations</span>
+        </div>
+        <div class="w-full bg-slate-800 h-2.5 rounded-full mt-3 overflow-hidden">
+          <div id="blocksProgressBar" class="bg-blue-500 h-2.5 rounded-full transition-all duration-700" style="width: 85%"></div>
+        </div>
+        <div class="mt-2 text-xs text-slate-400 font-mono flex justify-between">
+          <span>50% to 100% Horizon</span>
+          <span>P2_blocks.csv</span>
+        </div>
+      </div>
+
+      <!-- Total Workflow Progress -->
+      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-lg">
+        <div class="flex justify-between items-center text-xs font-semibold uppercase tracking-wider text-slate-400">
+          <span>Overall Phase Completion</span>
+          <span id="overallBadge" class="text-purple-400 font-bold font-mono">92.8%</span>
+        </div>
+        <div class="mt-2 flex items-baseline gap-2">
+          <span id="overallPercent" class="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-emerald-400 font-mono tracking-tight">92.8%</span>
+          <span class="text-sm text-slate-500 font-medium">overall</span>
+        </div>
+        <div class="w-full bg-slate-800 h-2.5 rounded-full mt-3 overflow-hidden">
+          <div id="overallProgressBar" class="bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-500 h-2.5 rounded-full transition-all duration-700" style="width: 92.8%"></div>
+        </div>
+        <div class="mt-2 text-xs text-slate-400 flex justify-between">
+          <span>Parts 1 & 3: 100%</span>
+          <span>Part 2: 85.67%</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Live Telemetry Terminal -->
+    <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl">
+      <div class="flex justify-between items-center mb-3">
+        <div class="flex items-center gap-2">
+          <div class="flex gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+          </div>
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-300 ml-2">Live Worker Execution Output</span>
+        </div>
+        <span class="text-xs text-slate-400 font-mono">task-6620</span>
+      </div>
+      <div id="logConsole" class="bg-black/60 rounded-xl p-3.5 border border-slate-800/80 text-emerald-400 log-stream min-h-[110px] space-y-1 overflow-x-auto">
+        <div class="text-slate-500">Awaiting stream telemetry...</div>
+      </div>
+    </div>
+
+    <!-- Dataset Breakdown Table -->
+    <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl space-y-3">
+      <div class="flex justify-between items-center">
+        <h2 class="text-sm font-bold uppercase tracking-wider text-slate-200">Per-Dataset Evaluation Progress (8 Datasets)</h2>
+        <span class="text-xs text-slate-400">13 Methods &bull; 4 Classifiers &bull; 10 Seeds</span>
+      </div>
+      <div class="overflow-x-auto rounded-xl border border-slate-800">
+        <table class="w-full text-left text-xs text-slate-200">
+          <thead class="bg-slate-950/80 border-b border-slate-800 text-slate-400 font-semibold uppercase text-[11px]">
+            <tr>
+              <th class="py-3 px-4">Dataset</th>
+              <th class="py-3 px-4">Type</th>
+              <th class="py-3 px-4">Completed Cells</th>
+              <th class="py-3 px-4 w-44">Progress</th>
+              <th class="py-3 px-4">Status</th>
+            </tr>
+          </thead>
+          <tbody id="datasetTableBody" class="divide-y divide-slate-800/80 font-mono">
+            <tr><td colspan="5" class="py-4 text-center text-slate-500">Loading live dataset metrics...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Live Recent Evaluations Stream Table -->
+    <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl space-y-3">
+      <div class="flex justify-between items-center">
+        <h2 class="text-sm font-bold uppercase tracking-wider text-slate-200">Recent Stream Evaluations Landed in P2_raw.csv</h2>
+        <span class="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 pulse-dot"></span>
+          Auto-updating
+        </span>
+      </div>
+      <div class="overflow-x-auto rounded-xl border border-slate-800">
+        <table class="w-full text-left text-xs text-slate-200 font-mono">
+          <thead class="bg-slate-950/80 border-b border-slate-800 text-slate-400 font-semibold uppercase text-[11px]">
+            <tr>
+              <th class="py-2.5 px-3">Dataset</th>
+              <th class="py-2.5 px-3">Classifier</th>
+              <th class="py-2.5 px-3">Method</th>
+              <th class="py-2.5 px-3">Seed</th>
+              <th class="py-2.5 px-3 text-right">Macro G-mean</th>
+              <th class="py-2.5 px-3 text-right">Minority-F1</th>
+              <th class="py-2.5 px-3 text-right">AUC</th>
+            </tr>
+          </thead>
+          <tbody id="recentTableBody" class="divide-y divide-slate-800/80">
+            <tr><td colspan="7" class="py-4 text-center text-slate-500">Waiting for live records...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="pt-2 pb-6 text-center text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between border-t border-slate-800 gap-2">
+      <div>DA-ECEBO Phase 2 Real-Time Dashboard &bull; Live Telemetry Server running on port 8088</div>
+      <div class="font-mono text-[11px]">Results saved strictly to results_stream/</div>
+    </footer>
+
+  </div>
+
+  <script>
+    const API_URL = 'http://127.0.0.1:8088/api/status';
+    let failCount = 0;
+    let localSecondsRemaining = 6766;
+    let lastSeenCount = 596;
+
+    function formatCountdown(totalSecs) {
+      if (totalSecs <= 0) return '0 hrs 0 min 0 sec remaining';
+      const h = Math.floor(totalSecs / 3600);
+      const m = Math.floor((totalSecs % 3600) / 60);
+      const s = totalSecs % 60;
+      return `${h} hrs ${m} min ${s} sec remaining`;
+    }
+
+    // Local 1-second countdown ticker
+    setInterval(() => {
+      if (localSecondsRemaining > 0) {
+        localSecondsRemaining--;
+        document.getElementById('etaClock').textContent = formatCountdown(localSecondsRemaining);
+      }
+    }, 1000);
+
+    async function fetchStatus() {
+      try {
+        const res = await fetch(API_URL, { cache: 'no-store' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        updateUI(data);
+        failCount = 0;
+        document.getElementById('liveDot').className = 'w-3 h-3 rounded-full bg-emerald-500 pulse-dot shadow-[0_0_12px_rgba(16,185,129,0.7)]';
+        document.getElementById('connBadge').textContent = 'LIVE STREAMING';
+        document.getElementById('connBadge').className = 'ml-2 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20';
+      } catch (err) {
+        failCount++;
+        document.getElementById('lastUpdated').textContent = `Retrying (${failCount})...`;
+        if (failCount > 3) {
+          document.getElementById('liveDot').className = 'w-3 h-3 rounded-full bg-amber-500';
+          document.getElementById('connBadge').textContent = 'STANDALONE MODE';
+          document.getElementById('connBadge').className = 'ml-2 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20';
+        }
+      }
+    }
+
+    function updateUI(data) {
+      document.getElementById('lastUpdated').textContent = data.timestamp;
+
+      // Update ETA
+      if (data.est_seconds_remaining !== undefined) {
+        localSecondsRemaining = data.est_seconds_remaining;
+        document.getElementById('etaClock').textContent = formatCountdown(localSecondsRemaining);
+      }
+      if (data.target_time) {
+        document.getElementById('targetTime').textContent = `~${data.target_time}`;
+      }
+
+      // Live Count Decreaser
+      const rem = data.remaining_cells !== undefined ? data.remaining_cells : (data.total_expected - data.total_raw);
+      const decreaserElem = document.getElementById('decreaserCount');
+      if (rem < lastSeenCount) {
+        decreaserElem.classList.add('flash-decrement');
+        setTimeout(() => decreaserElem.classList.remove('flash-decrement'), 600);
+      }
+      lastSeenCount = rem;
+      decreaserElem.textContent = rem.toLocaleString();
+      document.getElementById('decreasedSoFar').textContent = `${data.total_raw.toLocaleString()} completed (${data.percent_raw}%)`;
+      const remPct = (100 - data.percent_raw).toFixed(2);
+      document.getElementById('decreaserProgressBar').style.width = `${remPct}%`;
+
+      // Stats
+      document.getElementById('rawCount').textContent = data.total_raw.toLocaleString();
+      document.getElementById('rawPercentBadge').textContent = `${data.percent_raw}%`;
+      document.getElementById('rawProgressBar').style.width = `${data.percent_raw}%`;
+      document.getElementById('rawRemaining').textContent = `${rem.toLocaleString()} remaining`;
+
+      document.getElementById('blocksCount').textContent = data.total_blocks.toLocaleString();
+
+      document.getElementById('overallBadge').textContent = `${data.overall_project}%`;
+      document.getElementById('overallPercent').textContent = `${data.overall_project}%`;
+      document.getElementById('overallProgressBar').style.width = `${data.overall_project}%`;
+
+      // Dataset Table
+      const dsBody = document.getElementById('datasetTableBody');
+      dsBody.innerHTML = '';
+      data.datasets.forEach(ds => {
+        let statusBadge = '';
+        let rowClass = 'hover:bg-slate-800/40';
+        if (ds.status === 'Done') {
+          statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">100% Complete</span>';
+        } else if (ds.status === 'In Progress') {
+          rowClass = 'bg-blue-500/10 hover:bg-blue-500/15 font-semibold';
+          statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-blue-500/20 text-blue-400 border border-blue-500/30 pulse-dot">Executing</span>';
+        } else {
+          rowClass = 'opacity-50 hover:bg-slate-800/20';
+          statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-slate-800 text-slate-400 border border-slate-700">Queued</span>';
+        }
+
+        const tr = document.createElement('tr');
+        tr.className = rowClass;
+        tr.innerHTML = `
+          <td class="py-2.5 px-4 font-bold text-white">${ds.name}</td>
+          <td class="py-2.5 px-4 text-slate-400 font-sans">${ds.type}</td>
+          <td class="py-2.5 px-4">${ds.completed} / ${ds.total}</td>
+          <td class="py-2.5 px-4">
+            <div class="flex items-center gap-2">
+              <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                <div class="${ds.status === 'Done' ? 'bg-emerald-500' : 'bg-blue-500'} h-2 rounded-full" style="width: ${ds.percent}%"></div>
+              </div>
+              <span class="text-[11px] text-slate-300 w-10 text-right">${ds.percent}%</span>
+            </div>
+          </td>
+          <td class="py-2.5 px-4">${statusBadge}</td>
+        `;
+        dsBody.appendChild(tr);
+      });
+
+      // Recent evaluations table
+      const recBody = document.getElementById('recentTableBody');
+      if (data.recent_evaluations && data.recent_evaluations.length > 0) {
+        recBody.innerHTML = '';
+        data.recent_evaluations.slice().reverse().forEach(r => {
+          const tr = document.createElement('tr');
+          tr.className = 'hover:bg-slate-800/40 text-[11px]';
+          tr.innerHTML = `
+            <td class="py-1.5 px-3 text-slate-200 font-semibold">${r.dataset}</td>
+            <td class="py-1.5 px-3 text-cyan-400">${r.classifier}</td>
+            <td class="py-1.5 px-3 text-amber-300">${r.method}</td>
+            <td class="py-1.5 px-3 text-slate-400">${r.seed}</td>
+            <td class="py-1.5 px-3 text-right font-bold text-emerald-400">${r.Macro_Gmean.toFixed(4)}</td>
+            <td class="py-1.5 px-3 text-right text-slate-300">${r.Minority_F1.toFixed(4)}</td>
+            <td class="py-1.5 px-3 text-right text-slate-300">${r.AUC.toFixed(4)}</td>
+          `;
+          recBody.appendChild(tr);
+        });
+      }
+
+      // Log console
+      const logBox = document.getElementById('logConsole');
+      if (data.log_lines && data.log_lines.length > 0) {
+        logBox.innerHTML = '';
+        data.log_lines.forEach(line => {
+          const div = document.createElement('div');
+          if (line.includes('G-mean:')) {
+            div.className = 'text-emerald-400';
+          } else if (line.includes('BENCHMARKING:') || line.includes('Train:')) {
+            div.className = 'text-cyan-300 font-bold';
+          } else {
+            div.className = 'text-slate-300';
+          }
+          div.textContent = `> ${line}`;
+          logBox.appendChild(div);
+        });
+      }
+    }
+
+    // Initial fetch and 1.5s interval
+    fetchStatus();
+    setInterval(fetchStatus, 1500);
+  </script>
+</body>
+</html>
