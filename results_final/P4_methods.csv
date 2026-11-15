@@ -1,0 +1,19 @@
+method,category,status,source,reason_or_notes
+None,Baseline,RUN,scikit-learn (unresampled),Primary control baseline
+SMOTE,Classic Oversampler,RUN,imblearn.over_sampling.SMOTE,Chawla et al. 2002
+BorderlineSMOTE,Classic Oversampler,RUN,imblearn.over_sampling.BorderlineSMOTE,Han et al. 2005 (Borderline-1)
+ADASYN,Density Oversampler,RUN,imblearn.over_sampling.ADASYN,He et al. 2008
+G-SMOTE,Geometric Oversampler,RUN,smote_variants.G_SMOTE,Douzas & Bacao 2019
+CCR,Combined Cleaning & Resampling,RUN,smote_variants.CCR,Koziarski et al. 2017
+A-SUWO,Clustering Oversampler,RUN,smote_variants.A_SUWO,Nekooeimehr & Lai-Yuen 2016
+MLOS_Fixed,Manifold Oversampler,RUN,scripts_stream/mlos_fixed.py,Wang et al. (author repo with label inversion fix verified in Part 0)
+ECEBO,Energy-based Oversampler,RUN,scripts_stream/ECEBO.py,Tao et al. 2026 (Literal acceptance rule)
+ECEBO_PSI0,Energy-based Oversampler,RUN,scripts_stream/ECEBO.py,Tao et al. (|psi| > 0 relaxed acceptance rule)
+DAECEBO2,Drift-Aware Oversampler,RUN,scripts_stream/da_ecebo_v3_auto.py,"Literal rule with validated K, lambda"
+DAECEBO2_PSI0,Drift-Aware Oversampler,RUN,scripts_stream/da_ecebo_v3_auto.py,"PSI0 rule with validated K, lambda"
+DAECEBO2_AUTO,Drift-Aware Oversampler,RUN,scripts_stream/da_ecebo_v3_auto.py,Validated rule + K + lambda + rho + step scale
+DAECEBO2_sanity,Drift-Aware Oversampler,RUN,scripts_stream/da_ecebo_v3_auto.py,"Sanity control (K=1, lambda=1, delta=0)"
+NCLO-SMOTE,Literature Baseline (R5),NOT RUN,No public package,No public PyPI or smote_variants implementation. Queried GitHub and smote_variants library.
+DGS,Literature Baseline (R5),NOT RUN,No public package,No public PyPI or smote_variants implementation. Queried GitHub and smote_variants library.
+HS-SMOTE,Literature Baseline (R5),NOT RUN,No public package,No public PyPI or smote_variants implementation (Expert Systems 2024). Queried GitHub and smote_variants library.
+ENU,Literature Baseline (R5),NOT RUN,No public package,No public PyPI or smote_variants implementation. Queried GitHub and smote_variants library.

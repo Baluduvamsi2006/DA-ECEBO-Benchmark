@@ -1,0 +1,26 @@
+dataset,tier,N_raw,N_capped,IR_full,N_min_train,N_min_test,time_col,majority_thinning_factor,table_category,verdict,notes
+creditcard,A,284807,60000,577.88,398,94,"Time (seconds, [0, 172792])",0.2093,Main Table,ACCEPTED,Tier A primary; real seconds timestamp; natural extreme imbalance
+ieee_cis_45,A,590540,60000,27.58,15497,5166,"TransactionDT (seconds, [86400, 15811131])",0.069,Main Table,ACCEPTED,Tier A natural stream; real chronological TransactionDT; fraud ~3.5%
+electricity_ir20,B,27378,27378,20.01,967,336,date (real 30-min intervals [1996-1998]),1.0,Main Table,ACCEPTED,Tier B; real date stream with induced IR=20 imbalance
+electricity_ir100,B,26335,26335,100.29,203,57,date (real 30-min intervals [1996-1998]),1.0,Main Table,ACCEPTED,Tier B; real date stream with induced IR=100 imbalance
+kddcup99_rare,B,494021,60000,92.48,3960,1325,"Connection arrival order ([0, 494020])",0.1119,Main Table,ACCEPTED,Tier B; chronological event network flow log; rare attack classes
+covertype_binary,C,581012,60000,60.2,7120,2373,"Survey sequence order ([0, 581011])",0.0884,Main Table,ACCEPTED,Tier C; row order only
+poker_binary,C,829201,60000,46.27,13155,4386,"Hand sequence order ([0, 829200])",0.0523,Main Table,ACCEPTED,Tier C; row order only
+airlines_ir20,C,314074,60000,20.0,11216,3739,"Flight schedule Time ([0, 314073])",0.1506,Main Table,ACCEPTED,Tier C; airline delay schedule sequence; induced IR=20
+airlines_ir100,C,302110,60000,100.01,2243,748,"Flight schedule Time ([0, 302109])",0.1906,Main Table,ACCEPTED,Tier C; airline delay schedule sequence; induced IR=100
+yeast3,C,1484,1484,8.1,109,54,"Row order ([0, 1483])",1.0,Main Table,ACCEPTED,"Tier C; standard tabular benchmark; IR=8.1 >= 5, train min 109 >= 100"
+synth_sea_p5,D,7835,7835,19.04,331,60,"Time_Step (discrete generator step [0, 7834])",1.0,Main Table,ACCEPTED,Tier D synthetic; SEA concept drift stream
+synth_hyperplane_p5,D,10350,10350,19.02,379,138,"Time_Step (discrete generator step [0, 10349])",1.0,Main Table,ACCEPTED,Tier D synthetic; rotating hyperplane concept drift stream
+synth_random_rbf_p5,D,6837,6837,19.05,264,77,"Time_Step (discrete generator step [0, 6836])",1.0,Main Table,ACCEPTED,Tier D synthetic; negative control (random drift centroids)
+weather,A,18159,18159,2.19,4110,1588,Daily chronological dates [1949-1999],1.0,Supplementary Table,ACCEPTED_SUPP,Tier A; real timestamp; near balanced (IR=2.19 < 5)
+spam_katakis,B,6213,6213,2.0,1787,282,Message arrival sequence order,1.0,Supplementary Table,ACCEPTED_SUPP,Tier B; arrival order stream; near balanced (IR=2.00 < 5)
+phishing,C,11055,11055,1.26,3680,1218,Row order in dataset,1.0,Supplementary Table,ACCEPTED_SUPP,Tier C; row order only; near balanced (IR=1.26 < 5)
+ludata,B,1901,1901,1.06,690,234,Sensor stream arrival sequence,1.0,Supplementary Table,ACCEPTED_SUPP,Tier B; stream order; balanced (IR=1.06 < 5)
+chessweka,B,503,503,1.54,152,46,Game move sequence order,1.0,Supplementary Table,ACCEPTED_SUPP,Tier B; stream order; near balanced (IR=1.54 < 5); small sample N=503
+outdoor_stream,B,4000,4000,39.0,70,30,Arrival sequence,1.0,Supplementary Table,ACCEPTED_SUPP,"Tier B; IR=39 >= 5, but train minority 70 < 100 rule threshold"
+ecoli2,C,336,336,5.46,39,13,Row index,1.0,Supplementary Table,ACCEPTED_SUPP,"Tier C; IR=5.46 >= 5, but total minority 52 < 100 rule threshold"
+elliptic_bitcoin,A,203769,0,9.25,0,0,time_step (49 steps),0.0,Not Available,NOT AVAILABLE,Gated behind Kaggle API credentials; automated download returned 401
+baf_neurips_2022,A,1000000,0,89.67,0,0,month (0-7),0.0,Not Available,NOT AVAILABLE,Gated behind Kaggle/HuggingFace API credentials; returned 401
+paysim,B,6362620,0,773.7,0,0,"step (hours [1, 744])",0.0,Not Available,NOT AVAILABLE,Gated behind Kaggle API credentials; automated download returned 401
+unsw_nb15,C,257673,0,4.73,0,0,CSV row order,0.0,Not Available,NOT AVAILABLE,CloudStor server decommissioned; Kaggle API credentials required
+backblaze_q1,A,18000000,0,1000.0,0,0,date,0.0,Not Available,NOT AVAILABLE,819 MB compressed archive with tens of millions of rows; exceeds 20-min triage cap
