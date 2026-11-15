@@ -1,0 +1,11 @@
+method,avg_rank
+CCR_tuned,2.5
+MLOS_Fixed_tuned,3.5
+ECEBO_PSI0_tuned,4.625
+SMOTE_tuned,4.75
+ADASYN_tuned,4.875
+DAECEBO2_AUTO,5.75
+BorderlineSMOTE_tuned,6.5
+G-SMOTE_tuned,6.625
+A-SUWO_tuned,7.5
+ECEBO_tuned,8.375

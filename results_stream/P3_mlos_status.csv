@@ -1,0 +1,3 @@
+dataset,n_classes_before,n_classes_after,counts_before,counts_after,cart_macro_f1_none,cart_macro_f1_mlos,status
+toy_2d,2,2,"{0: 10, 1: 2}","{1: 10, 0: 10}",,,PASS (exact 50/50 balance)
+ecoli2,2,2,"{0: 214, 1: 38}","{1: 214, 0: 214}",0.807,0.9338,PASS (Macro-F1 >= 0.5: 0.9338)
