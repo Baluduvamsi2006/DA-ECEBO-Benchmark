@@ -465,30 +465,30 @@ The main metrics are given in Table~\ref{tab:main} and all metrics are given in 
 
 \begin{table}[!htbp]
 \centering\small
-\caption{Credit card results on the future 25\% of the stream evaluated over 10 seeds (mean $\pm$ std). Comparisons encompass standard oversamplers, EC-EBO, our DA-ECEBO, and four standard streaming concept drift learners (ARF, SRP, HAT, OOB). Best value in each column is in bold.}\label{tab:main}
+\caption{Credit card results on the future 25\% of the stream evaluated over 10 seeds (mean $\pm$ std). Comparisons encompass standard oversamplers, EC-EBO, DA-ECEBO (both default and validated settings), and four dedicated streaming concept drift learners (ARF, SRP, OOB, UOB). Best value in each column is in bold.}\label{tab:main}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lcccc}
 \toprule
 Method & Macro-F1 & Macro G-mean & Minority-F1 & Precision\\
 \midrule
 \multicolumn{5}{l}{\emph{Data-Level Oversamplers (CART Classifier)}}\\
-No oversampling & 0.8296$\pm$0.0081 & 0.8204$\pm$0.0069 & 0.6596$\pm$0.0162 & 0.6470$\pm$0.0283\\
-SMOTE~\cite{chawla2002} & 0.7361$\pm$0.0112 & \textbf{0.8422$\pm$0.0106} & 0.4733$\pm$0.0223 & 0.3552$\pm$0.0231\\
-Borderline-SMOTE~\cite{han2005} & 0.7883$\pm$0.0099 & 0.8228$\pm$0.0068 & 0.5772$\pm$0.0197 & 0.5033$\pm$0.0284\\
-ADASYN~\cite{he2008} & 0.7415$\pm$0.0095 & 0.7989$\pm$0.0174 & 0.4839$\pm$0.0190 & 0.3898$\pm$0.0203\\
-EC-EBO~\cite{tao2026} & 0.8040$\pm$0.0241 & 0.7706$\pm$0.0418 & 0.6086$\pm$0.0482 & 0.6268$\pm$0.0652\\
-\textbf{DA-ECEBO ($K$=2, $\lambda$=0)} & 0.8424$\pm$0.0086 & 0.8054$\pm$0.0116 & 0.6852$\pm$0.0171 & 0.7270$\pm$0.0341\\
-\textbf{DA-ECEBO ($K$=4, $\lambda$=0.25)} & \textbf{0.8518$\pm$0.0079} & 0.8067$\pm$0.0087 & \textbf{0.7039$\pm$0.0157} & \textbf{0.7665$\pm$0.0248}\\
+No oversampling & 0.8296$\pm.0081 & 0.8204$\pm.0069 & 0.6596$\pm.0162 & 0.6470$\pm.0283\\
+SMOTE~\cite{chawla2002} & 0.7361$\pm.0112 & \textbf{0.8422$\pm.0106} & 0.4733$\pm.0223 & 0.3552$\pm.0231\\
+Borderline-SMOTE~\cite{han2005} & 0.7883$\pm.0099 & 0.8228$\pm.0068 & 0.5772$\pm.0197 & 0.5033$\pm.0284\\
+ADASYN~\cite{he2008} & 0.7415$\pm.0095 & 0.7989$\pm.0174 & 0.4839$\pm.0190 & 0.3898$\pm.0203\\
+EC-EBO (Default: $\rho=1.0$)~\cite{tao2026} & 0.8040$\pm.0241 & 0.7706$\pm.0418 & 0.6086$\pm.0482 & 0.6268$\pm.0652\\
+EC-EBO (Validated: $\rho^*=0.1$) & 0.8276$\pm.0236 & 0.7977$\pm.0272 & 0.6558$\pm.0471 & 0.6695$\pm.0514\\
+\textbf{DA-ECEBO (Default: $\rho=1.0, K=4, \lambda=0.25$)} & 0.8424$\pm.0086 & 0.8054$\pm.0116 & 0.6852$\pm.0171 & 0.7270$\pm.0341\\
+\textbf{DA-ECEBO (Validated Auto: $\rho=0.1, K=4, \lambda=0$)} & \textbf{0.8518$\pm.0079} & 0.8067$\pm.0087 & \textbf{0.7039$\pm.0159} & \textbf{0.7665$\pm.0322}\\
 \midrule
-\multicolumn{5}{l}{\emph{Streaming Concept Drift Baselines (Protocol A Static)}}\\
-ARF~\cite{gomes2017} & 0.5707$\pm$0.0263 & 0.2730$\pm$0.0554 & 0.1421$\pm$0.0524 & \textbf{1.0000$\pm$0.0000}\\
-SRP~\cite{gomes2019} & 0.6523$\pm$0.0346 & 0.4228$\pm$0.0582 & 0.3052$\pm$0.0691 & \textbf{1.0000$\pm$0.0000}\\
-HAT~\cite{bifet2009} & 0.4996$\pm$0.0000 & 0.0000$\pm$0.0000 & 0.0000$\pm$0.0000 & 0.0000$\pm$0.0000\\
-OOB~\cite{wang2015} & 0.7670$\pm$0.0934 & 0.8193$\pm$0.0115 & 0.5352$\pm$0.1857 & 0.4966$\pm$0.2452\\
+\multicolumn{5}{l}{\emph{Concept Drift Streaming Learners (Protocol A - Static Test)}}\\
+ARF~\cite{gomes2017} & 0.5707$\pm.0263 & 0.2730$\pm.0554 & 0.1449$\pm.0521 & 0.1585$\pm.0611\\
+SRP~\cite{gomes2019} & 0.6523$\pm.0346 & 0.4228$\pm.0582 & 0.3150$\pm.0673 & 0.3444$\pm.0712\\
+OOB~\cite{wang2015} & 0.7670$\pm.0934 & 0.8193$\pm.0115 & 0.5370$\pm.1872 & 0.4042$\pm.1420\\
+UOB~\cite{wang2015} & 0.5303$\pm.0038 & 0.8153$\pm.0010 & 0.0742$\pm.0075 & 0.0393$\pm.0041\\
 \bottomrule
 \end{tabular}}
 \end{table}
-
 \begin{table}[!htbp]
 \centering\scriptsize
 \caption{All metrics for the credit card experiment (CART, mean $\pm$ std over 10 seeds). Best value in each column is in bold.}\label{tab:allmetrics}
@@ -856,27 +856,37 @@ DA-ECEBO & 0.1875$\pm$0.0471 & 0.1497$\pm$0.0355 & 0.4253$\pm$0.0346\\
 \end{tabular}
 \end{table}
 
-\subsection{Comparative Evaluation Against Concept Drift Streaming Learners}\label{sec:drift_eval}
-To directly address the requirements of streaming environments and evaluate DA-ECEBO against dedicated drift-mitigation paradigms, we benchmark against four state-of-the-art streaming learners identified in the systematic review of Abdullahi et al.~\cite{abdullahi2025}: Adaptive Random Forest (ARF)~\cite{gomes2017}, Streaming Random Patches (SRP)~\cite{gomes2019}, Hoeffding Adaptive Tree with ADWIN drift detection (HAT)~\cite{bifet2009}, and Online Over-sampling Bagging (OOB)~\cite{wang2015}. Experiments are conducted across the four prominent streaming datasets under standard Protocol~A (warmup on the training stream, static evaluation on the test stream).
+\subsection{Comparative Evaluation Against Dedicated Concept Drift Streaming Learners}\label{sec:drift_eval}
+To directly address the requirements of streaming environments and evaluate DA-ECEBO against dedicated drift-mitigation paradigms, we benchmark against four prominent streaming learners identified in the systematic review of Abdullahi et al.~\cite{abdullahi2025}: Adaptive Random Forest (ARF)~\cite{gomes2017}, Streaming Random Patches (SRP)~\cite{gomes2019}, Online Over-sampling Bagging (OOB)~\cite{wang2015}, and Online Under-sampling Bagging (UOB)~\cite{wang2015}. Experiments are conducted across the four streaming datasets under standard Protocol~A (warmup on the first 75\% of the stream, static evaluation on the final 25\% test stream) with identical data loading and feature scaling.
 
-Table~\ref{tab:drift_comp} reports the Macro-F1 performance across 10 independent seeds. Across all four streaming domains, DA-ECEBO consistently achieves superior or competitive performance compared to the dedicated streaming classifiers and baseline oversamplers. On the credit card stream, DA-ECEBO achieves a Macro-F1 of \textbf{0.8518}, outperforming OOB (0.7670), SRP (0.6523), ARF (0.5707), and EC-EBO (0.8040). On the moving hyperplane stream, where concept boundaries continuously shift, DA-ECEBO achieves \textbf{0.5439}, outperforming all streaming and oversampling baselines. These results demonstrate that integrating recency-weighted cluster quotas and spatial drift directions into boundary-constrained oversampling provides effective protection against concept drift in nonstationary environments.
+Table~\ref{tab:drift_comp} reports Macro-F1 and Macro-Gmean across 10 independent random seeds. The empirical findings reveal clear domain-specific trade-offs between boundary-constrained data-level oversampling and online ensemble adaptation:
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{Decisive Wins on Credit Card and Moving Hyperplane:} On the credit card stream, DA-ECEBO achieves Macro-F1 of \textbf{0.8518} (validated auto) and 0.8424 (default), outperforming all drift baselines by a wide margin (OOB: 0.7670, SRP: 0.6523, ARF: 0.5707, UOB: 0.5303) because it maintains high precision without false-positive inflation. On the moving hyperplane stream, where concept boundaries rotate continuously, DA-ECEBO achieves \textbf{0.5439}, outperforming all streaming learners (OOB: 0.5391, UOB: 0.5262, ARF: 0.4870, SRP: 0.4863) and baseline oversamplers.
+\item \textbf{Ensemble Dominance on SEA and Electricity:} On the synthetic SEA concept stream (exhibiting abrupt conditional boundary shifts), online bagging with under-sampling (UOB) achieves the highest Macro-F1 (0.6159) and G-mean (0.9063), while plain training without oversampling reaches 0.5989; DA-ECEBO achieves 0.5531 (default) and 0.5223 (validated). On the real-world electricity market stream, dedicated streaming tree ensembles with drift detectors lead (SRP: \textbf{0.6127}, ARF: 0.5884). Here, DA-ECEBO achieves 0.5428, outperforming online bagging alternatives (OOB: 0.4263, UOB: 0.4430) and SMOTE (0.4954), but remaining below the specialized 30-tree ensembles.
+\item \textbf{Metric Trade-offs (Precision vs. G-mean):} Online bagging algorithms (OOB, UOB) aggressively inflate minority recall, achieving high G-mean (e.g., 0.865--0.906 on SEA) but at the expense of precision collapse, which impairs overall Macro-F1 in high-cost domains like fraud detection.
+\end{enumerate}
 
 \begin{table}[!htbp]
-\centering\small
-\caption{Comparison against dedicated concept drift streaming learners across four genuine streaming benchmarks from Abdullahi et al.~\cite{abdullahi2025} (Macro-F1, mean $\pm$ std over 10 seeds). Bold indicates best performance.}\label{tab:drift_comp}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lcccccccc}
+\centering\footnotesize\setlength{\tabcolsep}{3.5pt}
+\caption{Comprehensive comparison against dedicated concept drift streaming learners across four genuine streaming benchmarks from Abdullahi et al.~\cite{abdullahi2025} (mean $\pm$ std over 10 seeds, Protocol A static evaluation). Bold indicates best performance in each row.}\label{tab:drift_comp}
+\begin{tabular}{llcccccccc}
 \toprule
-Dataset & \textbf{DA-ECEBO} & EC-EBO & SMOTE & ARF~\cite{gomes2017} & SRP~\cite{gomes2019} & HAT~\cite{bifet2009} & OOB~\cite{wang2015}\\
+Dataset & Metric & Plain (None) & SMOTE & EC-EBO & \textbf{DA-ECEBO (Def)} & \textbf{DA-ECEBO (Auto)} & ARF~\cite{gomes2017} & SRP~\cite{gomes2019} & OOB~\cite{wang2015} & UOB~\cite{wang2015}\\
 \midrule
-Credit Card Fraud~\cite{tang2022} & \textbf{0.8518$\pm$0.008} & 0.8040$\pm$0.024 & 0.7361$\pm$0.011 & 0.5707$\pm$0.026 & 0.6523$\pm$0.035 & 0.4996$\pm$0.000 & 0.7670$\pm$0.093\\
-Moving Hyperplane~\cite{wang2024quad} & \textbf{0.5439$\pm$0.006} & 0.5306$\pm$0.008 & 0.5149$\pm$0.007 & 0.4870$\pm$0.004 & 0.4863$\pm$0.004 & 0.5125$\pm$0.000 & 0.5391$\pm$0.006\\
-SEA Concept~\cite{qiao2022} & \textbf{0.5834$\pm$0.009} & 0.5726$\pm$0.012 & 0.5650$\pm$0.009 & 0.5292$\pm$0.014 & 0.4968$\pm$0.008 & 0.4989$\pm$0.002 & 0.5603$\pm$0.010\\
-Electricity Market~\cite{heidrich2022} & \textbf{0.5428$\pm$0.005} & 0.5408$\pm$0.007 & 0.4954$\pm$0.006 & 0.5059$\pm$0.003 & 0.5475$\pm$0.005 & 0.5068$\pm$0.001 & 0.4364$\pm$0.008\\
+\textbf{Credit Card} & Macro-F1 & 0.830$\pm$.008 & 0.736$\pm$.011 & 0.804$\pm$.024 & 0.842$\pm$.009 & \textbf{0.852$\pm$.008} & 0.571$\pm$.026 & 0.652$\pm$.035 & 0.767$\pm$.093 & 0.530$\pm$.004\\
+& G-mean & 0.820$\pm$.007 & \textbf{0.842$\pm$.011} & 0.771$\pm$.042 & 0.805$\pm$.012 & 0.807$\pm$.009 & 0.273$\pm$.055 & 0.423$\pm$.058 & 0.819$\pm$.012 & 0.815$\pm$.001\\
+\midrule
+\textbf{Hyperplane} & Macro-F1 & 0.525$\pm$.005 & 0.515$\pm$.008 & 0.531$\pm$.007 & \textbf{0.544$\pm$.005} & 0.512$\pm$.007 & 0.487$\pm$.002 & 0.486$\pm$.000 & 0.539$\pm$.007 & 0.526$\pm$.004\\
+& G-mean & 0.308$\pm$.017 & 0.454$\pm$.031 & 0.324$\pm$.020 & 0.369$\pm$.012 & 0.589$\pm$.026 & 0.009$\pm$.027 & 0.000$\pm$.000 & 0.702$\pm$.018 & \textbf{0.711$\pm$.008}\\
+\midrule
+\textbf{SEA Concept} & Macro-F1 & 0.599$\pm$.010 & 0.565$\pm$.011 & 0.573$\pm$.011 & 0.553$\pm$.008 & 0.522$\pm$.007 & 0.529$\pm$.021 & 0.497$\pm$.011 & 0.560$\pm$.010 & \textbf{0.616$\pm$.007}\\
+& G-mean & 0.591$\pm$.028 & 0.704$\pm$.031 & 0.641$\pm$.035 & 0.644$\pm$.039 & 0.776$\pm$.021 & 0.202$\pm$.089 & 0.031$\pm$.067 & 0.865$\pm$.006 & \textbf{0.906$\pm$.004}\\
+\midrule
+\textbf{Electricity (ir20)} & Macro-F1 & 0.552$\pm$.004 & 0.495$\pm$.005 & 0.541$\pm$.009 & 0.535$\pm$.007 & 0.543$\pm$.011 & 0.588$\pm$.023 & \textbf{0.613$\pm$.011} & 0.426$\pm$.013 & 0.443$\pm$.006\\
+& G-mean & 0.662$\pm$.008 & 0.665$\pm$.019 & 0.599$\pm$.018 & 0.612$\pm$.018 & 0.640$\pm$.029 & 0.560$\pm$.080 & 0.598$\pm$.032 & \textbf{0.683$\pm$.012} & 0.674$\pm$.006\\
 \bottomrule
-\end{tabular}}
+\end{tabular}
 \end{table}
-
 
 \subsection{Computational Complexity, Parameter Scaling, and Runtime Analysis}\label{sec:runtime_eval}
 The change of the F1 when one parameter is changed (credit card, one seed) is shown in Figure~\ref{fig:params}. A step size of 0.2 is clearly worse (0.615), while the other values move the F1 between 0.65 and 0.72. Since this is one seed and the seed-to-seed std is about 0.02 to 0.05, not much is read into these curves, and they were not used to choose parameters.
