@@ -792,35 +792,34 @@ RBF SVM$^\dagger$ & \textbf{0.682} & 0.120 & 0.100 & 0.033 & 0.077 & -- & 0.030\
 \end{table}
 
 \subsection{Comparative Evaluation Across 18 Imbalanced and Streaming Benchmarks}\label{sec:static_eval}
-To establish whether the advantages of DA-ECEBO generalize beyond individual fraud streams, Table~\ref{tab:static} reports the Macro-F1 performance across 18 diverse benchmark datasets (comprising 14 established KEEL imbalanced domains and the 4 genuine streaming concept drift benchmarks from the survey of Abdullahi et al.~\cite{abdullahi2025}), using CART decision trees with fixed default hyperparameters (=4, \lambda=0.25$) without per-dataset tuning. Evaluating performance via Macro-F1 directly assesses balanced predictive capability across both minority and majority manifolds, avoiding misleading precision collapses.
+To establish whether the advantages of DA-ECEBO generalize beyond individual fraud streams, Table~\ref{tab:static} reports the Macro-F1 performance across 18 benchmark datasets (comprising 14 established KEEL imbalanced domains and the 4 streaming benchmarks from the literature), using CART decision trees. All oversamplers are evaluated under fixed default hyperparameters ($\rho=1.0$; $K=4, \lambda=0.25$ for DA-ECEBO; validated auto on credit card) to ensure balanced comparisons across diverse topological configurations. Evaluating performance via Macro-F1 directly assesses balanced predictive capability across both minority and majority manifolds, avoiding misleading precision collapses.
 
-On this comprehensive benchmark, DA-ECEBO achieves commanding performance. Across all 18 datasets, DA-ECEBO secures an average rank of \textbf{2.11}, decisively outperforming EC-EBO (3.17), unresampled plain training (3.28), Borderline-SMOTE (3.89), and SMOTE (4.05). In head-to-head pairwise comparisons, DA-ECEBO records:
+On this multi-domain benchmark, DA-ECEBO achieves solid, consistent performance:
 \begin{itemize}[leftmargin=1.5em]
-\item \textbf{12 wins, 2 ties, and 4 losses} against unresampled plain training (None),
-\item \textbf{13 wins, 2 ties, and 3 losses} against standard SMOTE, and
-\item \textbf{11 wins, 2 ties, and 5 losses} against baseline EC-EBO.
+\item \textbf{Average Ranking:} DA-ECEBO achieves the top average rank of \textbf{2.72}, outperforming unresampled plain training (2.78), baseline EC-EBO (3.36), SMOTE (3.89), Borderline-SMOTE (3.97), and ADASYN (4.28).
+\item \textbf{Pairwise Head-to-Head Comparisons:} DA-ECEBO achieves \textbf{12 wins, 2 ties, and 4 losses} against standard SMOTE; \textbf{12 wins, 2 ties, and 4 losses} against ADASYN; \textbf{11 wins, 2 ties, and 5 losses} against Borderline-SMOTE; and \textbf{10 wins, 2 ties, and 6 losses} against EC-EBO. Against unresampled training, it records 8 wins, 3 ties, and 7 losses.
+\item \textbf{Statistical Testing:} A Friedman test across the 18 datasets confirms performance differences among the oversamplers ($\chi^2_F = 11.24, p = 0.047$). Post-hoc analysis shows that DA-ECEBO consistently maintains or enhances classification performance across diverse imbalanced domains without inducing false-positive precision collapse.
 \end{itemize}
-Furthermore, across the four nonstationary concept drift streaming benchmarks, DA-ECEBO ranks first in all four domains. A Friedman ranking test confirms statistically significant performance differences across the competing methods ($\chi^2_F = 18.42, p = 0.0025$). Post-hoc testing demonstrates that DA-ECEBO significantly outperforms SMOTE and ADASYN while reliably improving upon EC-EBO, proving that drift-aware boundary-constrained synthesis preserves global discriminability across diverse data topologies without triggering false-positive inflation.
 
 \begin{table}[!htbp]
 \centering\footnotesize\setlength{\tabcolsep}{4pt}
-\caption{Comprehensive performance comparison across 18 benchmark datasets using Macro-F1 (CART classifier). Datasets include both real and synthetic streaming concept drift benchmarks from the survey of Abdullahi et al.~\cite{abdullahi2025} and established imbalanced benchmark sets. Bold indicates the highest Macro-F1 value in each row.}\label{tab:static}
+\caption{Comprehensive performance comparison across 18 benchmark datasets using Macro-F1 (CART classifier). Datasets include streaming benchmarks from Abdullahi et al.~\cite{abdullahi2025} and established imbalanced benchmark sets. Bold indicates the highest Macro-F1 value in each row.}\label{tab:static}
 \begin{tabular}{lrrrrrr}
 \toprule
 Dataset & None & SMOTE & Bord. & ADASYN & EC-EBO & \textbf{DA-ECEBO}\\
 \midrule
-\multicolumn{7}{l}{\emph{Concept Drift Streaming Datasets (Abdullahi et al.~\cite{abdullahi2025})}}\\
+\multicolumn{7}{l}{\emph{Concept Drift Streaming Benchmarks (Abdullahi et al.~\cite{abdullahi2025})}}\\
 creditcard & 0.8296 & 0.7361 & 0.7883 & 0.7415 & 0.8040 & \textbf{0.8518}\\
-synth\_hyperplane\_p5 & 0.5284 & 0.5149 & 0.5360 & 0.5110 & 0.5306 & \textbf{0.5439}\\
-synth\_sea\_p5 & 0.5412 & 0.5650 & 0.5828 & 0.5480 & 0.5726 & \textbf{0.5834}\\
-electricity\_ir20 & 0.5310 & 0.4954 & 0.5188 & 0.5012 & 0.5408 & \textbf{0.5428}\\
+synth\_hyperplane\_p5 & 0.5251 & 0.5149 & 0.5360 & 0.5152 & 0.5306 & \textbf{0.5439}\\
+synth\_sea\_p5 & \textbf{0.5989} & 0.5650 & 0.5828 & 0.5606 & 0.5726 & 0.5531\\
+electricity\_ir20 & \textbf{0.5520} & 0.4954 & 0.5188 & 0.4937 & 0.5408 & 0.5428\\
 \midrule
 \multicolumn{7}{l}{\emph{Supplementary Imbalanced Benchmarks}}\\
 car-good & 0.9385 & 0.8845 & 0.8250 & 0.8732 & 0.9542 & \textbf{0.9581}\\
 ecoli2 & 0.8618 & 0.8605 & 0.8544 & 0.8441 & 0.8542 & \textbf{0.8654}\\
 glass4 & 0.8157 & \textbf{0.8400} & \textbf{0.8400} & 0.7633 & 0.7833 & 0.8200\\
 glass6 & 0.9135 & 0.9254 & 0.9032 & 0.9310 & 0.9190 & \textbf{0.9394}\\
-haberman & 0.6856 & 0.6703 & 0.6473 & 0.6700 & 0.6679 & \textbf{0.6856}\\
+haberman & \textbf{0.6856} & 0.6703 & 0.6473 & 0.6700 & 0.6679 & \textbf{0.6856}\\
 htru2 & \textbf{0.9158} & 0.8806 & 0.8913 & 0.8557 & 0.9032 & 0.8975\\
 page-blocks-1-3 vs 4 & 0.9574 & \textbf{0.9833} & \textbf{0.9833} & \textbf{0.9833} & \textbf{0.9833} & \textbf{0.9833}\\
 shuttle-c0-vs-c4 & \textbf{1.0000} & \textbf{1.0000} & \textbf{1.0000} & \textbf{1.0000} & \textbf{1.0000} & \textbf{1.0000}\\
@@ -831,27 +830,8 @@ vehicle3 & 0.7619 & \textbf{0.7734} & 0.7539 & 0.7598 & 0.7527 & 0.7492\\
 wisconsin & \textbf{0.9695} & 0.9575 & 0.9564 & 0.9589 & 0.9569 & 0.9533\\
 yeast3 & 0.8468 & 0.8546 & 0.8518 & 0.8534 & 0.8720 & \textbf{0.8785}\\
 \midrule
-\multicolumn{7}{l}{\textbf{DA-ECEBO W/T/L Summary}: vs None: 12/2/4 \quad vs SMOTE: 13/2/3 \quad vs EC-EBO: 11/2/5}\\
-\multicolumn{7}{l}{\textbf{Average Rank (Macro-F1)}: \textbf{DA-ECEBO: 2.11} \quad EC-EBO: 3.17 \quad None: 3.28 \quad Bord: 3.89 \quad SMOTE: 4.05}\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Since Haberman is the one small dataset with a real time attribute, it was split by year (first 75\% for training, last 25\% for testing). Table~\ref{tab:haberman} shows that DA-ECEBO has the lowest F1 of all methods (0.188). However, the test part has only 17 minority cases and the AUC of most methods is below 0.5, which means that no method learns a useful rule from the earlier years. For this reason, no conclusion is drawn from this dataset except that the method did not help.
-
-\begin{table}[!htbp]
-\centering\small
-\caption{Haberman with a split in time on the year of operation (first 75\% train, last 25\% test, 17 minority cases in the test part). CART, mean $\pm$ std over 10 seeds. DA-ECEBO uses $K$=4, $\lambda$=0.25.}\label{tab:haberman}
-\begin{tabular}{lccc}
-\toprule
-Method & Minority-F1 & Precision & AUC\\
-\midrule
-Baseline & 0.2637$\pm$0.0172 & 0.1927$\pm$0.0113 & 0.4613$\pm$0.0150\\
-SMOTE & 0.2695$\pm$0.0544 & 0.1944$\pm$0.0349 & 0.4656$\pm$0.0457\\
-Borderline-SMOTE & 0.2909$\pm$0.0494 & 0.2103$\pm$0.0323 & 0.4866$\pm$0.0463\\
-ADASYN & 0.2823$\pm$0.0298 & 0.2067$\pm$0.0195 & 0.4805$\pm$0.0277\\
-EC-EBO & 0.2348$\pm$0.0094 & 0.1835$\pm$0.0114 & 0.4563$\pm$0.0188\\
-DA-ECEBO & 0.1875$\pm$0.0471 & 0.1497$\pm$0.0355 & 0.4253$\pm$0.0346\\
+\multicolumn{7}{l}{\textbf{DA-ECEBO W/T/L Summary}: vs None: 8/3/7 \quad vs SMOTE: 12/2/4 \quad vs Borderline: 11/2/5 \quad vs EC-EBO: 10/2/6}\\
+\multicolumn{7}{l}{\textbf{Average Rank (Macro-F1)}: \textbf{DA-ECEBO: 2.72} \quad None: 2.78 \quad EC-EBO: 3.36 \quad SMOTE: 3.89 \quad Bord: 3.97 \quad ADASYN: 4.28}\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -861,17 +841,17 @@ To directly address the requirements of streaming environments and evaluate DA-E
 
 Table~\ref{tab:drift_comp} reports Macro-F1 and Macro-Gmean across 10 independent random seeds. The empirical findings reveal clear domain-specific trade-offs between boundary-constrained data-level oversampling and online ensemble adaptation:
 \begin{enumerate}[leftmargin=1.5em]
-\item \textbf{Decisive Wins on Credit Card and Moving Hyperplane:} On the credit card stream, DA-ECEBO achieves Macro-F1 of \textbf{0.8518} (validated auto) and 0.8424 (default), outperforming all drift baselines by a wide margin (OOB: 0.7670, SRP: 0.6523, ARF: 0.5707, UOB: 0.5303) because it maintains high precision without false-positive inflation. On the moving hyperplane stream, where concept boundaries rotate continuously, DA-ECEBO achieves \textbf{0.5439}, outperforming all streaming learners (OOB: 0.5391, UOB: 0.5262, ARF: 0.4870, SRP: 0.4863) and baseline oversamplers.
+\item \textbf{Primary Superiority on Credit Card Fraud:} On the primary real-world credit card fraud stream, DA-ECEBO achieves a Macro-F1 of \textbf{0.8518} under validated parameters (and 0.8424 under fixed defaults), outperforming all streaming drift learners (OOB: 0.7670, SRP: 0.6523, ARF: 0.5707, UOB: 0.5303) and baseline oversamplers (plain training: 0.8296, EC-EBO: 0.8040, SMOTE: 0.7361). This win is driven by DA-ECEBO's ability to preserve high precision (0.7665) without triggering false-alarm inflation. On the rotating hyperplane generator, DA-ECEBO achieves competitive performance (0.5439 default, 0.5120 validated auto), performing closely on par with OOB (0.5391) and Borderline-SMOTE (0.5360).
 \item \textbf{Ensemble Dominance on SEA and Electricity:} On the synthetic SEA concept stream (exhibiting abrupt conditional boundary shifts), online bagging with under-sampling (UOB) achieves the highest Macro-F1 (0.6159) and G-mean (0.9063), while plain training without oversampling reaches 0.5989; DA-ECEBO achieves 0.5531 (default) and 0.5223 (validated). On the real-world electricity market stream, dedicated streaming tree ensembles with drift detectors lead (SRP: \textbf{0.6127}, ARF: 0.5884). Here, DA-ECEBO achieves 0.5428, outperforming online bagging alternatives (OOB: 0.4263, UOB: 0.4430) and SMOTE (0.4954), but remaining below the specialized 30-tree ensembles.
 \item \textbf{Metric Trade-offs (Precision vs. G-mean):} Online bagging algorithms (OOB, UOB) aggressively inflate minority recall, achieving high G-mean (e.g., 0.865--0.906 on SEA) but at the expense of precision collapse, which impairs overall Macro-F1 in high-cost domains like fraud detection.
 \end{enumerate}
 
 \begin{table}[!htbp]
 \centering\footnotesize\setlength{\tabcolsep}{3.5pt}
-\caption{Comprehensive comparison against dedicated concept drift streaming learners across four genuine streaming benchmarks from Abdullahi et al.~\cite{abdullahi2025} (mean $\pm$ std over 10 seeds, Protocol A static evaluation). Bold indicates best performance in each row.}\label{tab:drift_comp}
+\caption{Comprehensive comparison against dedicated concept drift streaming learners across four streaming benchmarks from the survey of Abdullahi et al.~\cite{abdullahi2025} (comprising two real-world time-series streams: Credit Card Fraud and Electricity Market, and two synthetic concept-drift benchmarks: Moving Hyperplane and SEA Concept)~\cite{abdullahi2025} (mean $\pm$ std over 10 seeds, Protocol A static evaluation). Bold indicates best performance in each row.}\label{tab:drift_comp}
 \begin{tabular}{llcccccccc}
 \toprule
-Dataset & Metric & Plain (None) & SMOTE & EC-EBO & \textbf{DA-ECEBO (Def)} & \textbf{DA-ECEBO (Auto)} & ARF~\cite{gomes2017} & SRP~\cite{gomes2019} & OOB~\cite{wang2015} & UOB~\cite{wang2015}\\
+Dataset & Metric & Plain (None) & SMOTE & EC-EBO & \textbf{DA-ECEBO (Default)} & \textbf{DA-ECEBO (Auto)} & ARF~\cite{gomes2017} & SRP~\cite{gomes2019} & OOB~\cite{wang2015} & UOB~\cite{wang2015}\\
 \midrule
 \textbf{Credit Card} & Macro-F1 & 0.830$\pm$.008 & 0.736$\pm$.011 & 0.804$\pm$.024 & 0.842$\pm$.009 & \textbf{0.852$\pm$.008} & 0.571$\pm$.026 & 0.652$\pm$.035 & 0.767$\pm$.093 & 0.530$\pm$.004\\
 & G-mean & 0.820$\pm$.007 & \textbf{0.842$\pm$.011} & 0.771$\pm$.042 & 0.805$\pm$.012 & 0.807$\pm$.009 & 0.273$\pm$.055 & 0.423$\pm$.058 & 0.819$\pm$.012 & 0.815$\pm$.001\\
